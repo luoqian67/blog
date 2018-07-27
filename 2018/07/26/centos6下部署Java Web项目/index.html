@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>centos6下部署Java Web项目 | 个人博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
+  
+
+  <meta name="description" content="在云服务器上安装好系统后： 1.先查看系统上有无原有的旧版本的mysql；tomcat；java。  若有则先卸载；卸载命令使用12yum -y remove mysql*;yum -y remove mysql*;   2.附上能下载的jdk1.7的链接，先下载jdk1.7后tomcat7放在本地目录下； #wget http://zhibo100.oss-cn-hangzhou.aliyunc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centos6下部署Java Web项目">
+<meta property="og:url" content="http://luoqian67.github.io/luoqian.io/2018/07/26/centos6下部署Java Web项目/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="在云服务器上安装好系统后： 1.先查看系统上有无原有的旧版本的mysql；tomcat；java。  若有则先卸载；卸载命令使用12yum -y remove mysql*;yum -y remove mysql*;   2.附上能下载的jdk1.7的链接，先下载jdk1.7后tomcat7放在本地目录下； #wget http://zhibo100.oss-cn-hangzhou.aliyunc">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/11830691-f6dfb82105b652dd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/11830691-43d808f091a46f1f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/11830691-ec95cd5f7262b443?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/11830691-20b30a801774fa03?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/11830691-1846e005397d0a7f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/11830691-f63b1755bbb61beb?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/11830691-0a4c5d248baf452d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/11830691-f0f055251f501663?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/11830691-17885fd9a976e687?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/11830691-4bc0af23b71f1818?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/11830691-132c6530d79a13a2?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/11830691-2f80780e9aa910eb?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/11830691-357a3cb0da52fede?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/11830691-657e8f3558316810?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/11830691-8e28c51ae237a245?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-07-27T02:46:11.880Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="centos6下部署Java Web项目">
+<meta name="twitter:description" content="在云服务器上安装好系统后： 1.先查看系统上有无原有的旧版本的mysql；tomcat；java。  若有则先卸载；卸载命令使用12yum -y remove mysql*;yum -y remove mysql*;   2.附上能下载的jdk1.7的链接，先下载jdk1.7后tomcat7放在本地目录下； #wget http://zhibo100.oss-cn-hangzhou.aliyunc">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/11830691-f6dfb82105b652dd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cben" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/luoqian.io/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-centos6下部署Java Web项目" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">centos6下部署Java Web项目</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.07.26</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Luo Qian</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://www.forsigner.com/luoqian.io/2018/07/26/centos6下部署Java Web项目/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><strong>在云服务器上安装好系统后：</strong></p>
+<p><strong>1.</strong>先查看系统上有无原有的旧版本的mysql；tomcat；java。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/11830691-f6dfb82105b652dd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>若有则先卸载；卸载命令使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y remove mysql*;</span><br><span class="line">yum -y remove mysql*;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/11830691-43d808f091a46f1f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/11830691-ec95cd5f7262b443?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>2.</strong>附上能下载的jdk1.7的链接，先下载jdk1.7后tomcat7放在本地目录下；</p>
+<pre><code>#wget http://zhibo100.oss-cn-hangzhou.aliyuncs.com/software/jdk-7u79-linux-x64.tar.gz
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/11830691-20b30a801774fa03?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<pre><code>#wget http://zhibo100.oss-cn-hangzhou.aliyuncs.com/software/apache-tomcat-7.0.59.tar.gz
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/11830691-1846e005397d0a7f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>3.</strong>在/usr目录下建立一个java目录，java下建立jdk和tomcat目录用来存放解压好的文件；</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/11830691-f63b1755bbb61beb?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>4.</strong>解压jdk ，tomcat，命令如下；</p>
+<pre><code># tar -zxvf jdk-7u79-linux-x64.tar.gz -C /usr/java/
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/11830691-0a4c5d248baf452d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<pre><code># tar -xzvf apache-tomcat-7.0.59.tar.gz -C /usr/java/tomcat/
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/11830691-f0f055251f501663?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>5.</strong>配置环境变量</p>
+<p>配置JAVA环境变量并检测<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure></p>
+<p>在文件末尾加上</p>
+<p>#java</p>
+<pre><code>JAVA_HOME=/usr/java/jdk1.7.0_79
+
+JRE_HOME=${JAVA_HOME}/jre
+
+CLASS_PATH=${JAVA_HOME}/lib
+
+PATH=$PATH:${JAVA_HOME}/bin
+
+export PATH JAVA_HOME CLASS_PATH PATH
+</code></pre><p>保存退出</p>
+<p><strong>6.</strong>刷新环境变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@luo ~]# source /etc/profile</span><br><span class="line"></span><br><span class="line">[root@luo ~]# java -version</span><br><span class="line"></span><br><span class="line">java version &quot;1.7.0_79&quot;</span><br><span class="line"></span><br><span class="line">Java(TM) SE Runtime Environment (build 1.7.0_79-b15)</span><br><span class="line"></span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 24.79-b02, mixed mode)</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/11830691-17885fd9a976e687?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>如图说明Java安装成功。</p>
+<p><strong>7.</strong>开启tomcat：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/java/tomcat/apache-tomcat-7.0.59/bin/</span><br><span class="line"></span><br><span class="line">./startup.sh</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/11830691-4bc0af23b71f1818?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>验证能否访问，在浏览器下输入localhost：8080  能出现tomcat的页面就行了。</p>
+<p>设置tomcat自启动，</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/11830691-132c6530d79a13a2?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>在进去  vim /etc/rc.d/rc.local 最下面加入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export JDK_HOME=/usr/java/jdk1.7.0_79</span><br><span class="line"></span><br><span class="line">export JAVA_HOME=/usr/java/jdk1.7.0_79</span><br><span class="line"></span><br><span class="line">/usr/java/tomcat/apache-tomcat-7.0.59/bin/startup.sh</span><br></pre></td></tr></table></figure></p>
+<p>然后重启服务器试验。</p>
+<p><strong>8.</strong>安装mysql；因为yum源中默认没有mysql的安装源，所以需要手动添加，按照下面的语句顺序能顺利安装。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://dev.mysql.com/get/mysql57-community-release-el6-9.noarch.rpm</span><br></pre></td></tr></table></figure>
+<p>b.安装用来配置mysql的yum源的rpm包</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/11830691-2f80780e9aa910eb?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -Uvh mysql57-community-release-el6-9.noarch.rpm</span><br><span class="line">或</span><br><span class="line">yum localinstall -y mysql57-community-release-el6-9.noarch.rpm</span><br></pre></td></tr></table></figure></p>
+<p>安装成功后在/etc/yum.repos.d/下会多出几个mysql的yum源的配置</p>
+<p>然后安装mysql</p>
+<p>yum install mysql-community-server</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/11830691-357a3cb0da52fede?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>开启mysql服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld start</span><br></pre></td></tr></table></figure></p>
+<p>mysql安装成功后创建的超级用户‘root‘@’localhost’的密码会被存储在<strong>/var/log/mysqld.log</strong>，可以使用如下命令查看密码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &apos;temporary password&apos; /var/log/mysqld.log</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/11830691-657e8f3558316810?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>由于mysql修改密码时候如果你输入简单密码会报错，将不能修改密码，使用初始密码更改MySQL检测密码的规则，代码如下：</p>
+<p>首先，进入MySQL</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/11830691-8e28c51ae237a245?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>然后修改validate_password_policy参数的值（可参考mysql报错博客）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;setglobal validate_password_policy=0;</span><br><span class="line"></span><br><span class="line">setglobal validate_password_length=1;</span><br><span class="line"></span><br><span class="line">setglobal validate_password_mixed_case_count=2;</span><br></pre></td></tr></table></figure>
+<p>然后通过mysql安全设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation修改密码</span><br><span class="line"></span><br><span class="line"># mysql_secure_installation</span><br><span class="line"></span><br><span class="line">    Enter current password for root (enter for none):　←　回车 </span><br><span class="line"></span><br><span class="line">    Set root password? [Y/n]　←　回车 </span><br><span class="line"></span><br><span class="line">    New password:　←　123456 </span><br><span class="line"></span><br><span class="line">    Re-enter new password:　←　123456 </span><br><span class="line"></span><br><span class="line">    Remove anonymous users? [Y/n]　←　回车(删除匿名用户) </span><br><span class="line"></span><br><span class="line">    Disallow root login remotely? [Y/n]　←　回车(禁止远程root登录) </span><br><span class="line"></span><br><span class="line">    Remove test database and access to it? [Y/n]　←　回车(删除test库) </span><br><span class="line"></span><br><span class="line">    Reload privilege tables now? [Y/n]　←　回车 </span><br><span class="line"></span><br><span class="line">    Thanks for using MySQL! </span><br><span class="line"></span><br><span class="line"># mysql -u root -p </span><br><span class="line"></span><br><span class="line">    Enter password:123456</span><br></pre></td></tr></table></figure>
+<p>设置远程登录：</p>
+<pre><code>CREATE USER &apos;mysql&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;
+
+GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos; WITH GRANT OPTION;
+</code></pre><p>清除缓存：<br><code>mysql&gt; flush privileges;</code></p>
+<p>设置默认编码集</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># vim /etc/my.cnf  </span><br><span class="line"></span><br><span class="line">character-set-server=utf8</span><br><span class="line"></span><br><span class="line"># /etc/init.d/mysqld restart  </span><br><span class="line"></span><br><span class="line"># mysqld --version</span><br></pre></td></tr></table></figure>
+<p>最后把导出的war文件放到服务器中tomcat下的webapps目录下即可。</p>
+
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/luoqian.io/2018/07/26/在Windows10中添加新建的右键/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/luoqian.io/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+
+   
+      <div class="git"></div>
+   
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'http://luoqian67.github.io/luoqian.io/2018/07/26/centos6下部署Java Web项目/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
