@@ -520,17 +520,19 @@ GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apo
 <li>c：字符设备</li>
 <li>l：符号链接文件</li>
 <li>p：管道文件pip，FIFO（first in，first out）</li>
-<li>s：套接字文件：服务加IP端口，作为一个服务的入口。socket<h5 id="5-显示当前路径"><a href="#5-显示当前路径" class="headerlink" title="5. 显示当前路径"></a>5. 显示当前路径</h5></li>
+<li>s：套接字文件：服务加IP端口，作为一个服务的入口。socket</li>
+</ul>
+<h5 id="5-显示当前路径"><a href="#5-显示当前路径" class="headerlink" title="5. 显示当前路径"></a>5. 显示当前路径</h5><ul>
 <li>每个shell和系统进程都有一个当前的工作目录 </li>
 <li>CWD:current work directory</li>
 <li>显示当前shell CWD的绝对路径</li>
 <li>pwd: printing working directory<ul>
 <li>-P 显示真实物理路径</li>
-<li>-L 显示链接路径（默认）<h5 id="6-绝对路径和相对路径"><a href="#6-绝对路径和相对路径" class="headerlink" title="6. 绝对路径和相对路径"></a>6. 绝对路径和相对路径</h5></li>
+<li>-L 显示链接路径（默认）</li>
 </ul>
 </li>
 </ul>
-<p><strong>绝对路径:</strong></p>
+<h5 id="6-绝对路径和相对路径"><a href="#6-绝对路径和相对路径" class="headerlink" title="6. 绝对路径和相对路径"></a>6. 绝对路径和相对路径</h5><p><strong>绝对路径:</strong></p>
 <ul>
 <li>以正斜杠开始</li>
 <li>完整的文件的位置路径</li>
@@ -574,8 +576,7 @@ GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apo
 <h5 id="8-显示目录"><a href="#8-显示目录" class="headerlink" title="8. 显示目录"></a>8. 显示目录</h5><ul>
 <li>列出当前目录的内容或指定目录(显示的数据都是元数据)</li>
 <li>用法：ls [options] [files_or_dirs]</li>
-<li><p>示例:</p>
-<ul>
+<li>示例:<ul>
 <li>ls -a ：包含隐藏文件</li>
 <li>ls -l ：显示额外的信息</li>
 <li>ls -R ：目录递归显示</li>
@@ -585,10 +586,12 @@ GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apo
 <li>ls –t ： 按mtime排序</li>
 <li>ls –u ：配合-t选项，显示并按atime从新到旧排序</li>
 <li>ls –U : 按目录存放顺序显示</li>
-<li>ls –X : 按文件后缀排序<h5 id="9-查看文件状态-显示当前文件的时间戳"><a href="#9-查看文件状态-显示当前文件的时间戳" class="headerlink" title="9. 查看文件状态:显示当前文件的时间戳"></a>9. 查看文件状态:显示当前文件的时间戳</h5></li>
+<li>ls –X : 按文件后缀排序</li>
 </ul>
-<p><strong>命令：stat</strong></p>
 </li>
+</ul>
+<h5 id="9-查看文件状态-显示当前文件的时间戳"><a href="#9-查看文件状态-显示当前文件的时间戳" class="headerlink" title="9. 查看文件状态:显示当前文件的时间戳"></a>9. 查看文件状态:显示当前文件的时间戳</h5><p> <strong>命令：stat</strong></p>
+<ul>
 <li>文件：metadata, data</li>
 <li>三个时间戳：<ul>
 <li>access time：访问时间，atime，读取文件内容</li>
@@ -817,15 +820,14 @@ GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apo
 <li>COMMAND &gt; /path/to/file.out 2&gt;&amp;1 （顺序很重要）</li>
 <li>COMMAND &gt;&gt; /path/to/file.out 2&gt;&amp;1</li>
 <li>()：合并多个程序的STDOUT</li>
-<li>( cal 2007 ; cal 2008 ) &gt; all.txt<h5 id="21-tr命令"><a href="#21-tr命令" class="headerlink" title="21. tr命令"></a>21. tr命令</h5></li>
+<li>( cal 2007 ; cal 2008 ) &gt; all.</li>
 </ul>
 </li>
 </ul>
-<p><strong>tr  转换和删除字符</strong></p>
+<h5 id="21-tr命令"><a href="#21-tr命令" class="headerlink" title="21. tr命令"></a>21. tr命令</h5><p><strong>tr  转换和删除字符</strong></p>
 <ul>
 <li>语法:<code>tr [OPTION]... SET1 [SET2]</code></li>
-<li><p>选项：</p>
-<ul>
+<li>选项：<ul>
 <li>-c –C –complement：取字符集的补集</li>
 <li>-d –delete：删除所有属于第一字符集的字符 </li>
 <li>-s –squeeze-repeats：把连续重复的字符以单独一个字符表示</li>
@@ -833,11 +835,12 @@ GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apo
 <li>[:alnum:]：字母和数字 [:alpha:]：字母 [:cntrl:]：控制（非打印）字符 [:digit:]：数字 [:graph:]：图形字符 [:lower:]：小写字母 [:print:]：可打印字符 [:punct:]：标点符号 [:space:]：空白字符 [:upper:]：大写字母 [:xdigit:]：十六进制字符<blockquote>
 <p>例如：<code>tr ‘a-z’   ‘A-Z’&lt; /etc/issue</code></p>
 </blockquote>
-<h5 id="22-管道"><a href="#22-管道" class="headerlink" title="22. 管道"></a>22. 管道</h5></li>
+</li>
 </ul>
 </li>
-<li><p>管道（使用符号“|”表示）用来连接命令</p>
-</li>
+</ul>
+<h5 id="22-管道"><a href="#22-管道" class="headerlink" title="22. 管道"></a>22. 管道</h5><ul>
+<li>管道（使用符号“|”表示）用来连接命令</li>
 <li><p>命令1 | 命令2 | 命令3 | …</p>
 <ul>
 <li>将命令1的STDOUT发送给命令2的STDIN，命令2的STDOUT送到命令3的STDIN</li>
@@ -882,8 +885,9 @@ GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apo
 <ul>
 <li>-ignoredups（忽略重复）</li>
 <li>-ignorespace（忽略空格）    </li>
-<li>-ignoreboth（忽略所有)<h5 id="26-权限"><a href="#26-权限" class="headerlink" title="26.权限"></a>26.权限</h5>认证；授权：审计 Authentication；Authorization；Adition</li>
+<li>-ignoreboth（忽略所有)</li>
 </ul>
+<h5 id="26-权限"><a href="#26-权限" class="headerlink" title="26.权限"></a>26.权限</h5><p>认证；授权：审计 Authentication；Authorization；Adition</p>
 
           
         
