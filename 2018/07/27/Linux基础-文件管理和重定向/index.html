@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="zh-Hans">
+<html lang="zh-CN">
 <head>
     <!--Setting-->
     <meta charset="UTF-8">
@@ -99,7 +99,7 @@
                     <ul class="menu">
                         
                             <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa "></i>Home</a>
+                                <a href="/blog"><i class="fa "></i>首页</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
@@ -606,7 +606,7 @@
             meta: 'nick,mail'.split(','),
             pageSize: '10',
             path: window.location.pathname,
-            lang: 'zh-Hans'.toLowerCase()
+            lang: 'zh-CN'.toLowerCase()
         })
     </script>
 
@@ -621,7 +621,7 @@
                 
                     <aside id="article-toc" role="navigation" class="col-md-4">
     <div class="widget">
-        <h3 class="title">Table of Contents</h3>
+        <h3 class="title">文章目录</h3>
         
             <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux基础-文件管理和重定向"><span class="toc-text">Linux基础-文件管理和重定向</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-每一个分区都是一个独立存在的文件系统"><span class="toc-text">1. 每一个分区都是一个独立存在的文件系统</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-目录：路径映射符"><span class="toc-text">2. 目录：路径映射符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-文件"><span class="toc-text">3. 文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-Linux下的文件类型"><span class="toc-text">4. Linux下的文件类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-显示当前路径"><span class="toc-text">5. 显示当前路径</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-绝对路径和相对路径"><span class="toc-text">6. 绝对路径和相对路径</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-cd命令"><span class="toc-text">7. cd命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-显示目录"><span class="toc-text">8. 显示目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-查看文件状态-显示当前文件的时间戳"><span class="toc-text">9. 查看文件状态:显示当前文件的时间戳</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#10-文件通配符（对文件名做通配）-glob、globing、wildcard"><span class="toc-text">10. 文件通配符（对文件名做通配）(glob、globing、wildcard)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#11-touch命令："><span class="toc-text">11. touch命令：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#12-复制：所谓的复制就是创建一个新的空文件，然后在将源文件的数-据流读出来，然后写进去。"><span class="toc-text">12. 复制：所谓的复制就是创建一个新的空文件，然后在将源文件的数  据流读出来，然后写进去。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#13-移动和重命名文件"><span class="toc-text">13. 移动和重命名文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#14-删除"><span class="toc-text">14. 删除</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#15-目录操作"><span class="toc-text">15. 目录操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#16-索引节点"><span class="toc-text">16. 索引节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#17-硬链接和软链接"><span class="toc-text">17. 硬链接和软链接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#18-确定文件内容"><span class="toc-text">18. 确定文件内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#19-标准输入与输出"><span class="toc-text">19. 标准输入与输出</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#20-把输出和错误重新定向到文件"><span class="toc-text">20. 把输出和错误重新定向到文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#21-tr命令"><span class="toc-text">21. tr命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#22-管道"><span class="toc-text">22. 管道</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#23-tee命令，一路输入两路输出"><span class="toc-text">23. tee命令，一路输入两路输出</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#24-selinux：安全Linux策略"><span class="toc-text">24. selinux：安全Linux策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#25-历史命令：history的环境变量配置："><span class="toc-text">25. 历史命令：history的环境变量配置：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#26-权限"><span class="toc-text">26.权限</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
         
