@@ -79,17 +79,21 @@
 
 
 
-<meta name="description" content="python开发Linux命令基础1. 每一个分区都是一个独立存在的文件系统2. 目录：路径映射符3. 文件文件有两种数据  元数据：描述数据的数据属性 metadata 数据：data  FHS：文件系统层级结构标准 4. Linux下的文件类型 -：普通文件 d：目录文件 b：块设备 c：字符设备 l：符号链接文件 p：管道文件pip，FIFO（first in，first out） s：套接">
+<meta name="description" content="Linux基础-文件管理和重定向1. 每一个分区都是一个独立存在的文件系统2. 目录：路径映射符3. 文件文件有两种数据  元数据：描述数据的数据属性 metadata 数据：data  FHS：文件系统层级结构标准 4. Linux下的文件类型 -：普通文件 d：目录文件 b：块设备 c：字符设备 l：符号链接文件 p：管道文件pip，FIFO（first in，first out） s：套接字">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python开发Linux命令基础">
-<meta property="og:url" content="http://luoqian67.github.io/luoqian.io/2018/07/27/python开发Linux基础/index.html">
+<meta property="og:title" content="Linux基础-文件管理和重定向">
+<meta property="og:url" content="http://luoqian67.github.io/luoqian.io/2018/07/27/Linux基础-文件管理和重定向/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="python开发Linux命令基础1. 每一个分区都是一个独立存在的文件系统2. 目录：路径映射符3. 文件文件有两种数据  元数据：描述数据的数据属性 metadata 数据：data  FHS：文件系统层级结构标准 4. Linux下的文件类型 -：普通文件 d：目录文件 b：块设备 c：字符设备 l：符号链接文件 p：管道文件pip，FIFO（first in，first out） s：套接">
+<meta property="og:description" content="Linux基础-文件管理和重定向1. 每一个分区都是一个独立存在的文件系统2. 目录：路径映射符3. 文件文件有两种数据  元数据：描述数据的数据属性 metadata 数据：data  FHS：文件系统层级结构标准 4. Linux下的文件类型 -：普通文件 d：目录文件 b：块设备 c：字符设备 l：符号链接文件 p：管道文件pip，FIFO（first in，first out） s：套接字">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-27T23:44:57.897Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11830691-b45e402408acf428.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11830691-056ec985b755059a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11830691-1a24908fb5a0b703.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-07-28T11:28:37.537Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python开发Linux命令基础">
-<meta name="twitter:description" content="python开发Linux命令基础1. 每一个分区都是一个独立存在的文件系统2. 目录：路径映射符3. 文件文件有两种数据  元数据：描述数据的数据属性 metadata 数据：data  FHS：文件系统层级结构标准 4. Linux下的文件类型 -：普通文件 d：目录文件 b：块设备 c：字符设备 l：符号链接文件 p：管道文件pip，FIFO（first in，first out） s：套接">
+<meta name="twitter:title" content="Linux基础-文件管理和重定向">
+<meta name="twitter:description" content="Linux基础-文件管理和重定向1. 每一个分区都是一个独立存在的文件系统2. 目录：路径映射符3. 文件文件有两种数据  元数据：描述数据的数据属性 metadata 数据：data  FHS：文件系统层级结构标准 4. Linux下的文件类型 -：普通文件 d：目录文件 b：块设备 c：字符设备 l：符号链接文件 p：管道文件pip，FIFO（first in，first out） s：套接字">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/11830691-b45e402408acf428.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -119,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://luoqian67.github.io/luoqian.io/2018/07/27/python开发Linux基础/"/>
+  <link rel="canonical" href="http://luoqian67.github.io/luoqian.io/2018/07/27/Linux基础-文件管理和重定向/"/>
 
 
 
 
 
-  <title>python开发Linux命令基础 | 个人博客</title>
+  <title>Linux基础-文件管理和重定向 | 个人博客</title>
   
 
 
@@ -252,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luoqian67.github.io/luoqian.io/luoqian.io/2018/07/27/python开发Linux基础/">
+    <link itemprop="mainEntityOfPage" href="http://luoqian67.github.io/luoqian.io/luoqian.io/2018/07/27/Linux基础-文件管理和重定向/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Luo Qian">
@@ -269,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python开发Linux命令基础</h1>
+          <h1 class="post-title" itemprop="name headline">Linux基础-文件管理和重定向</h1>
         
 
         <div class="post-meta">
@@ -319,7 +323,7 @@
       
 
       
-        <h1 id="python开发Linux命令基础"><a href="#python开发Linux命令基础" class="headerlink" title="python开发Linux命令基础"></a>python开发Linux命令基础</h1><h5 id="1-每一个分区都是一个独立存在的文件系统"><a href="#1-每一个分区都是一个独立存在的文件系统" class="headerlink" title="1. 每一个分区都是一个独立存在的文件系统"></a>1. 每一个分区都是一个独立存在的文件系统</h5><h5 id="2-目录：路径映射符"><a href="#2-目录：路径映射符" class="headerlink" title="2. 目录：路径映射符"></a>2. 目录：路径映射符</h5><h5 id="3-文件"><a href="#3-文件" class="headerlink" title="3. 文件"></a>3. 文件</h5><p>文件有两种数据</p>
+        <h1 id="Linux基础-文件管理和重定向"><a href="#Linux基础-文件管理和重定向" class="headerlink" title="Linux基础-文件管理和重定向"></a>Linux基础-文件管理和重定向</h1><h5 id="1-每一个分区都是一个独立存在的文件系统"><a href="#1-每一个分区都是一个独立存在的文件系统" class="headerlink" title="1. 每一个分区都是一个独立存在的文件系统"></a>1. 每一个分区都是一个独立存在的文件系统</h5><h5 id="2-目录：路径映射符"><a href="#2-目录：路径映射符" class="headerlink" title="2. 目录：路径映射符"></a>2. 目录：路径映射符</h5><h5 id="3-文件"><a href="#3-文件" class="headerlink" title="3. 文件"></a>3. 文件</h5><p>文件有两种数据</p>
 <ul>
 <li>元数据：描述数据的数据属性 metadata</li>
 <li>数据：data</li>
@@ -540,10 +544,13 @@
 <li>指向磁盘上文件的数据块指针</li>
 <li>有关文件的其他数据</li>
 </ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/11830691-b45e402408acf428.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="inode结构表"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11830691-056ec985b755059a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="inode存值形式"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11830691-1a24908fb5a0b703.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="根据inode找文件步骤"></p>
 <p>文件引用一个是 inode号</p>
 <p>人是通过文件名来引用一个文件</p>
 <p>一个目录是目录下的文件名和文件inode号之间的映射</p>
-<h5 id="17-硬链接和软链接"><a href="#17-硬链接和软链接" class="headerlink" title="17. 硬链接和软链接"></a>17. 硬链接和软链接</h5><p>详细说明[<a href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/inde.html#listing1" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/inde.html#listing1</a>(<a href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/inde.html#listing1" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/inde.html#listing1</a> “IBM博客”)</p>
+<h5 id="17-硬链接和软链接"><a href="#17-硬链接和软链接" class="headerlink" title="17. 硬链接和软链接"></a>17. 硬链接和软链接</h5><p>详细说明[<a href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/inde.html#listing1" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/inde.html#listing1</a>(<a href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/inde.html#listing1" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/inde.html#listing1</a> “转载自IBM博客”)</p>
 <p> <strong>1. 硬链接</strong></p>
 <ul>
 <li>创建硬链接会增加额外的记录项以引用文件</li>
@@ -850,7 +857,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python开发Linux命令基础"><span class="nav-number">1.</span> <span class="nav-text">python开发Linux命令基础</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-每一个分区都是一个独立存在的文件系统"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">1. 每一个分区都是一个独立存在的文件系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-目录：路径映射符"><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">2. 目录：路径映射符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-文件"><span class="nav-number">1.0.0.0.3.</span> <span class="nav-text">3. 文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-Linux下的文件类型"><span class="nav-number">1.0.0.0.4.</span> <span class="nav-text">4. Linux下的文件类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-显示当前路径"><span class="nav-number">1.0.0.0.5.</span> <span class="nav-text">5. 显示当前路径</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-绝对路径和相对路径"><span class="nav-number">1.0.0.0.6.</span> <span class="nav-text">6. 绝对路径和相对路径</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-cd命令"><span class="nav-number">1.0.0.0.7.</span> <span class="nav-text">7. cd命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-显示目录"><span class="nav-number">1.0.0.0.8.</span> <span class="nav-text">8. 显示目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-查看文件状态-显示当前文件的时间戳"><span class="nav-number">1.0.0.0.9.</span> <span class="nav-text">9. 查看文件状态:显示当前文件的时间戳</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-文件通配符（对文件名做通配）-glob、globing、wildcard"><span class="nav-number">1.0.0.0.10.</span> <span class="nav-text">10. 文件通配符（对文件名做通配）(glob、globing、wildcard)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-touch命令："><span class="nav-number">1.0.0.0.11.</span> <span class="nav-text">11. touch命令：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#12-复制：所谓的复制就是创建一个新的空文件，然后在将源文件的数-据流读出来，然后写进去。"><span class="nav-number">1.0.0.0.12.</span> <span class="nav-text">12. 复制：所谓的复制就是创建一个新的空文件，然后在将源文件的数  据流读出来，然后写进去。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#13-移动和重命名文件"><span class="nav-number">1.0.0.0.13.</span> <span class="nav-text">13. 移动和重命名文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#14-删除"><span class="nav-number">1.0.0.0.14.</span> <span class="nav-text">14. 删除</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#15-目录操作"><span class="nav-number">1.0.0.0.15.</span> <span class="nav-text">15. 目录操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#16-索引节点"><span class="nav-number">1.0.0.0.16.</span> <span class="nav-text">16. 索引节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#17-硬链接和软链接"><span class="nav-number">1.0.0.0.17.</span> <span class="nav-text">17. 硬链接和软链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#18-确定文件内容"><span class="nav-number">1.0.0.0.18.</span> <span class="nav-text">18. 确定文件内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#19-标准输入与输出"><span class="nav-number">1.0.0.0.19.</span> <span class="nav-text">19. 标准输入与输出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#20-把输出和错误重新定向到文件"><span class="nav-number">1.0.0.0.20.</span> <span class="nav-text">20. 把输出和错误重新定向到文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#21-tr命令"><span class="nav-number">1.0.0.0.21.</span> <span class="nav-text">21. tr命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#22-管道"><span class="nav-number">1.0.0.0.22.</span> <span class="nav-text">22. 管道</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#23-tee命令，一路输入两路输出"><span class="nav-number">1.0.0.0.23.</span> <span class="nav-text">23. tee命令，一路输入两路输出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#24-selinux：安全Linux策略"><span class="nav-number">1.0.0.0.24.</span> <span class="nav-text">24. selinux：安全Linux策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#25-历史命令：history的环境变量配置："><span class="nav-number">1.0.0.0.25.</span> <span class="nav-text">25. 历史命令：history的环境变量配置：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#26-权限"><span class="nav-number">1.0.0.0.26.</span> <span class="nav-text">26.权限</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux基础-文件管理和重定向"><span class="nav-number">1.</span> <span class="nav-text">Linux基础-文件管理和重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-每一个分区都是一个独立存在的文件系统"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">1. 每一个分区都是一个独立存在的文件系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-目录：路径映射符"><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">2. 目录：路径映射符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-文件"><span class="nav-number">1.0.0.0.3.</span> <span class="nav-text">3. 文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-Linux下的文件类型"><span class="nav-number">1.0.0.0.4.</span> <span class="nav-text">4. Linux下的文件类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-显示当前路径"><span class="nav-number">1.0.0.0.5.</span> <span class="nav-text">5. 显示当前路径</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-绝对路径和相对路径"><span class="nav-number">1.0.0.0.6.</span> <span class="nav-text">6. 绝对路径和相对路径</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-cd命令"><span class="nav-number">1.0.0.0.7.</span> <span class="nav-text">7. cd命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-显示目录"><span class="nav-number">1.0.0.0.8.</span> <span class="nav-text">8. 显示目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-查看文件状态-显示当前文件的时间戳"><span class="nav-number">1.0.0.0.9.</span> <span class="nav-text">9. 查看文件状态:显示当前文件的时间戳</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-文件通配符（对文件名做通配）-glob、globing、wildcard"><span class="nav-number">1.0.0.0.10.</span> <span class="nav-text">10. 文件通配符（对文件名做通配）(glob、globing、wildcard)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-touch命令："><span class="nav-number">1.0.0.0.11.</span> <span class="nav-text">11. touch命令：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#12-复制：所谓的复制就是创建一个新的空文件，然后在将源文件的数-据流读出来，然后写进去。"><span class="nav-number">1.0.0.0.12.</span> <span class="nav-text">12. 复制：所谓的复制就是创建一个新的空文件，然后在将源文件的数  据流读出来，然后写进去。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#13-移动和重命名文件"><span class="nav-number">1.0.0.0.13.</span> <span class="nav-text">13. 移动和重命名文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#14-删除"><span class="nav-number">1.0.0.0.14.</span> <span class="nav-text">14. 删除</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#15-目录操作"><span class="nav-number">1.0.0.0.15.</span> <span class="nav-text">15. 目录操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#16-索引节点"><span class="nav-number">1.0.0.0.16.</span> <span class="nav-text">16. 索引节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#17-硬链接和软链接"><span class="nav-number">1.0.0.0.17.</span> <span class="nav-text">17. 硬链接和软链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#18-确定文件内容"><span class="nav-number">1.0.0.0.18.</span> <span class="nav-text">18. 确定文件内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#19-标准输入与输出"><span class="nav-number">1.0.0.0.19.</span> <span class="nav-text">19. 标准输入与输出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#20-把输出和错误重新定向到文件"><span class="nav-number">1.0.0.0.20.</span> <span class="nav-text">20. 把输出和错误重新定向到文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#21-tr命令"><span class="nav-number">1.0.0.0.21.</span> <span class="nav-text">21. tr命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#22-管道"><span class="nav-number">1.0.0.0.22.</span> <span class="nav-text">22. 管道</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#23-tee命令，一路输入两路输出"><span class="nav-number">1.0.0.0.23.</span> <span class="nav-text">23. tee命令，一路输入两路输出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#24-selinux：安全Linux策略"><span class="nav-number">1.0.0.0.24.</span> <span class="nav-text">24. selinux：安全Linux策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#25-历史命令：history的环境变量配置："><span class="nav-number">1.0.0.0.25.</span> <span class="nav-text">25. 历史命令：history的环境变量配置：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#26-权限"><span class="nav-number">1.0.0.0.26.</span> <span class="nav-text">26.权限</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
