@@ -1,1441 +1,537 @@
-<!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="个人博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://luoqian67.github.io/blog">
+    <!--SEO-->
 
 
 
 
 
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
 
 
+<title>个人博客</title>
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml">
 
 
+    <link rel="icon" href="/favicon.ico">
 
+    
 
 
 
+<link rel="stylesheet" href="/blog/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/blog/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/blog/css/style.css?rev=@@hash">
 
 
 
 
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
 
 
 
 
 
 
-  
-  
-  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/blog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="个人博客">
-<meta property="og:url" content="http://luoqian67.github.io/blog/index.html">
-<meta property="og:site_name" content="个人博客">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="个人博客">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/blog/',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://luoqian67.github.io/blog/"/>
-
-
-
-
-
-  <title>个人博客</title>
-  
-
-
-
-
-
-
-
-
+    
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
-  
-    
-  
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
 
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/blog/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">个人博客</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+<body>
+    <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Luo Qian'>
+            <img src="/blog/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/blog/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/blog/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/blog/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/blog/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/blog/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://luoqian67.github.io/blog">个人博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Linux/"><i class="fa "></i>Linux</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Python/"><i class="fa "></i>Python</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>杂项</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content ">
+                    
+    <div class="carousel">
+        <img src="/blog/img/head-img.jpg">
+    </div>
 
 
 
- </div>
-    </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
+
+<article class="post">
+    
+        <div class="post-media">
+            <a href="/blog/2018/07/28/centos6下部署Java Web项目/">
+                <img class="img-ajax" src="/blog/img/loading.gif"  data-src="http://upload-images.jianshu.io/upload_images/11830691-f6dfb82105b652dd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"   alt="centos6下部署Java Web项目">
+            </a>
+        </div>
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/blog/2018/07/28/centos6下部署Java Web项目/">centos6下部署Java Web项目</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2018年07月28日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
             
-  <section id="posts" class="posts-expand">
+                在云服务器上安装好系统后：
+1.先查看系统上有无原有的旧版本的mysql；tomcat；java。
+
+若有则先卸载；卸载命令使用12yum -y remove mysql*;yum -y remove mysql*;
+
+
+2.附上能下...
+            
+        </p>
+    </div>
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luoqian67.github.io/blog/blog/2018/07/28/centos6下部署Java Web项目/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luo Qian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="个人博客">
-    </span>
-
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
                 
-                <a class="post-title-link" href="/blog/2018/07/28/centos6下部署Java Web项目/" itemprop="url">centos6下部署Java Web项目</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-28T20:58:17+08:00">
-                2018-07-28
-              </time>
-            
+        </span>
+    </span>
+    
 
-            
+    
+</div>
 
-            
-          </span>
+            </div>
 
-          
+            <div class="post-permalink">
+                <a href="/blog/2018/07/28/centos6下部署Java Web项目/" class="btn btn-default">Read</a>
+            </div>
+        </footer>
+    
+</article>
 
-          
-            
-          
 
-          
-          
-
-          
-
-          
-
-          
-
+<article class="post">
+    
+        <div class="post-media">
+            <a href="/blog/2018/07/27/Linux基础-文件管理和重定向/">
+                <img class="img-ajax" src="/blog/img/loading.gif"  data-src="https://upload-images.jianshu.io/upload_images/11830691-b45e402408acf428.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"   alt="Linux基础-文件管理和重定向">
+            </a>
         </div>
-      </header>
     
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/blog/2018/07/27/Linux基础-文件管理和重定向/">Linux基础-文件管理和重定向</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2018年07月27日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                Linux基础-文件管理和重定向1. 每一个分区都是一个独立存在的文件系统2. 目录：路径映射符3. 文件文件有两种数据
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+元数据：描述数据的数据属性 metadata
+数据：data
 
-      
-      
-
-      
-        
-          
-            <p><strong>在云服务器上安装好系统后：</strong></p>
-<p><strong>1.</strong>先查看系统上有无原有的旧版本的mysql；tomcat；java。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/11830691-f6dfb82105b652dd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>若有则先卸载；卸载命令使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y remove mysql*;</span><br><span class="line">yum -y remove mysql*;</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/11830691-43d808f091a46f1f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/11830691-ec95cd5f7262b443?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>2.</strong>附上能下载的jdk1.7的链接，先下载jdk1.7后tomcat7放在本地目录下；</p>
-<pre><code>#wget http://zhibo100.oss-cn-hangzhou.aliyuncs.com/software/jdk-7u79-linux-x64.tar.gz
-</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/11830691-20b30a801774fa03?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<pre><code>#wget http://zhibo100.oss-cn-hangzhou.aliyuncs.com/software/apache-tomcat-7.0.59.tar.gz
-</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/11830691-1846e005397d0a7f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>3.</strong>在/usr目录下建立一个java目录，java下建立jdk和tomcat目录用来存放解压好的文件；</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/11830691-f63b1755bbb61beb?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>4.</strong>解压jdk ，tomcat，命令如下；</p>
-<pre><code># tar -zxvf jdk-7u79-linux-x64.tar.gz -C /usr/java/
-</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/11830691-0a4c5d248baf452d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<pre><code># tar -xzvf apache-tomcat-7.0.59.tar.gz -C /usr/java/tomcat/
-</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/11830691-f0f055251f501663?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>5.</strong>配置环境变量</p>
-<p>配置JAVA环境变量并检测<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure></p>
-<p>在文件末尾加上</p>
-<p>#java</p>
-<pre><code>JAVA_HOME=/usr/java/jdk1.7.0_79
-
-JRE_HOME=${JAVA_HOME}/jre
-
-CLASS_PATH=${JAVA_HOME}/lib
-
-PATH=$PATH:${JAVA_HOME}/bin
-
-export PATH JAVA_HOME CLASS_PATH PATH
-</code></pre><p>保存退出</p>
-<p><strong>6.</strong>刷新环境变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@luo ~]# source /etc/profile</span><br><span class="line"></span><br><span class="line">[root@luo ~]# java -version</span><br><span class="line"></span><br><span class="line">java version &quot;1.7.0_79&quot;</span><br><span class="line"></span><br><span class="line">Java(TM) SE Runtime Environment (build 1.7.0_79-b15)</span><br><span class="line"></span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 24.79-b02, mixed mode)</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/11830691-17885fd9a976e687?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>如图说明Java安装成功。</p>
-<p><strong>7.</strong>开启tomcat：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/java/tomcat/apache-tomcat-7.0.59/bin/</span><br><span class="line"></span><br><span class="line">./startup.sh</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/11830691-4bc0af23b71f1818?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>验证能否访问，在浏览器下输入localhost：8080  能出现tomcat的页面就行了。</p>
-<p>设置tomcat自启动，</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/11830691-132c6530d79a13a2?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>在进去  vim /etc/rc.d/rc.local 最下面加入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export JDK_HOME=/usr/java/jdk1.7.0_79</span><br><span class="line"></span><br><span class="line">export JAVA_HOME=/usr/java/jdk1.7.0_79</span><br><span class="line"></span><br><span class="line">/usr/java/tomcat/apache-tomcat-7.0.59/bin/startup.sh</span><br></pre></td></tr></table></figure></p>
-<p>然后重启服务器试验。</p>
-<p><strong>8.</strong>安装mysql；因为yum源中默认没有mysql的安装源，所以需要手动添加，按照下面的语句顺序能顺利安装。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://dev.mysql.com/get/mysql57-community-release-el6-9.noarch.rpm</span><br></pre></td></tr></table></figure>
-<p>b.安装用来配置mysql的yum源的rpm包</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/11830691-2f80780e9aa910eb?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -Uvh mysql57-community-release-el6-9.noarch.rpm</span><br><span class="line">或</span><br><span class="line">yum localinstall -y mysql57-community-release-el6-9.noarch.rpm</span><br></pre></td></tr></table></figure></p>
-<p>安装成功后在/etc/yum.repos.d/下会多出几个mysql的yum源的配置</p>
-<p>然后安装mysql</p>
-<p>yum install mysql-community-server</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/11830691-357a3cb0da52fede?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>开启mysql服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld start</span><br></pre></td></tr></table></figure></p>
-<p>mysql安装成功后创建的超级用户‘root‘@’localhost’的密码会被存储在<strong>/var/log/mysqld.log</strong>，可以使用如下命令查看密码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &apos;temporary password&apos; /var/log/mysqld.log</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/11830691-657e8f3558316810?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>由于mysql修改密码时候如果你输入简单密码会报错，将不能修改密码，使用初始密码更改MySQL检测密码的规则，代码如下：</p>
-<p>首先，进入MySQL</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/11830691-8e28c51ae237a245?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>然后修改validate_password_policy参数的值（可参考mysql报错博客）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;setglobal validate_password_policy=0;</span><br><span class="line"></span><br><span class="line">setglobal validate_password_length=1;</span><br><span class="line"></span><br><span class="line">setglobal validate_password_mixed_case_count=2;</span><br></pre></td></tr></table></figure>
-<p>然后通过mysql安全设置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation修改密码</span><br><span class="line"></span><br><span class="line"># mysql_secure_installation</span><br><span class="line"></span><br><span class="line">    Enter current password for root (enter for none):　←　回车 </span><br><span class="line"></span><br><span class="line">    Set root password? [Y/n]　←　回车 </span><br><span class="line"></span><br><span class="line">    New password:　←　123456 </span><br><span class="line"></span><br><span class="line">    Re-enter new password:　←　123456 </span><br><span class="line"></span><br><span class="line">    Remove anonymous users? [Y/n]　←　回车(删除匿名用户) </span><br><span class="line"></span><br><span class="line">    Disallow root login remotely? [Y/n]　←　回车(禁止远程root登录) </span><br><span class="line"></span><br><span class="line">    Remove test database and access to it? [Y/n]　←　回车(删除test库) </span><br><span class="line"></span><br><span class="line">    Reload privilege tables now? [Y/n]　←　回车 </span><br><span class="line"></span><br><span class="line">    Thanks for using MySQL! </span><br><span class="line"></span><br><span class="line"># mysql -u root -p </span><br><span class="line"></span><br><span class="line">    Enter password:123456</span><br></pre></td></tr></table></figure>
-<p>设置远程登录：</p>
-<pre><code>CREATE USER &apos;mysql&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;
-
-GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos; WITH GRANT OPTION;
-</code></pre><p>清除缓存：<br><code>mysql&gt; flush privileges;</code></p>
-<p>设置默认编码集</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># vim /etc/my.cnf  </span><br><span class="line"></span><br><span class="line">character-set-server=utf8</span><br><span class="line"></span><br><span class="line"># /etc/init.d/mysqld restart  </span><br><span class="line"></span><br><span class="line"># mysqld --version</span><br></pre></td></tr></table></figure>
-<p>最后把导出的war文件放到服务器中tomcat下的webapps目录下即可。</p>
-
-          
-        
-      
+FHS：文件系统层级结构标准
+4. Linux...
+            
+        </p>
     </div>
     
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luoqian67.github.io/blog/blog/2018/07/27/Linux基础-文件管理和重定向/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luo Qian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
     </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="个人博客">
-    </span>
-
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
                 
-                <a class="post-title-link" href="/blog/2018/07/27/Linux基础-文件管理和重定向/" itemprop="url">Linux基础-文件管理和重定向</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T15:15:17+08:00">
-                2018-07-27
-              </time>
-            
+        </span>
+    </span>
+    
 
-            
+    
+</div>
 
-            
-          </span>
+            </div>
 
-          
+            <div class="post-permalink">
+                <a href="/blog/2018/07/27/Linux基础-文件管理和重定向/" class="btn btn-default">Read</a>
+            </div>
+        </footer>
+    
+</article>
 
-          
-            
-          
 
-          
-          
-
-          
-
-          
-
-          
-
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/blog/2018/07/26/在Windows10中添加新建的右键/">在Windows10中给右键中添加新建的方式</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2018年07月26日
+                </time>
+            </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Linux基础-文件管理和重定向"><a href="#Linux基础-文件管理和重定向" class="headerlink" title="Linux基础-文件管理和重定向"></a>Linux基础-文件管理和重定向</h1><h5 id="1-每一个分区都是一个独立存在的文件系统"><a href="#1-每一个分区都是一个独立存在的文件系统" class="headerlink" title="1. 每一个分区都是一个独立存在的文件系统"></a>1. 每一个分区都是一个独立存在的文件系统</h5><h5 id="2-目录：路径映射符"><a href="#2-目录：路径映射符" class="headerlink" title="2. 目录：路径映射符"></a>2. 目录：路径映射符</h5><h5 id="3-文件"><a href="#3-文件" class="headerlink" title="3. 文件"></a>3. 文件</h5><p>文件有两种数据</p>
-<ul>
-<li>元数据：描述数据的数据属性 metadata</li>
-<li>数据：data</li>
-</ul>
-<p>FHS：文件系统层级结构标准</p>
-<h5 id="4-Linux下的文件类型"><a href="#4-Linux下的文件类型" class="headerlink" title="4. Linux下的文件类型"></a>4. Linux下的文件类型</h5><ul>
-<li>-：普通文件</li>
-<li>d：目录文件</li>
-<li>b：块设备</li>
-<li>c：字符设备</li>
-<li>l：符号链接文件</li>
-<li>p：管道文件pip，FIFO（first in，first out）</li>
-<li>s：套接字文件：服务加IP端口，作为一个服务的入口。socket</li>
-</ul>
-<h5 id="5-显示当前路径"><a href="#5-显示当前路径" class="headerlink" title="5. 显示当前路径"></a>5. 显示当前路径</h5><ul>
-<li>每个shell和系统进程都有一个当前的工作目录 </li>
-<li>CWD:current work directory</li>
-<li>显示当前shell CWD的绝对路径</li>
-<li>pwd: printing working directory<ul>
-<li>-P 显示真实物理路径</li>
-<li>-L 显示链接路径（默认）</li>
-</ul>
-</li>
-</ul>
-<h5 id="6-绝对路径和相对路径"><a href="#6-绝对路径和相对路径" class="headerlink" title="6. 绝对路径和相对路径"></a>6. 绝对路径和相对路径</h5><p><strong>绝对路径:</strong></p>
-<ul>
-<li>以正斜杠开始</li>
-<li>完整的文件的位置路径</li>
-<li>可用于任何想指定一个文件名的时候</li>
-</ul>
-<p><strong>相对路径名:</strong></p>
-<ul>
-<li>不以斜线开始</li>
-<li>指定相对于当前工作目录或某目录的位置</li>
-<li>可以作为一个简短的形式指定一个文件名</li>
-</ul>
-<p><strong>注：</strong></p>
-<ul>
-<li>基名:basename</li>
-<li>目录名:dirname</li>
-</ul>
-<h5 id="7-cd命令"><a href="#7-cd命令" class="headerlink" title="7. cd命令"></a>7. cd命令</h5><p><strong>cd  改变目录</strong></p>
-<ul>
-<li>使用绝对或相对路径：<ul>
-<li>cd /home/wang/       </li>
-<li>cd home/wang</li>
-</ul>
-</li>
-<li>切换至父目录 ：cd ..</li>
-<li>切换至当前用户主目录： cd</li>
-<li>切换至以前的工作目录： cd -</li>
-<li>选项：-P </li>
-<li>相关的环境变量：<ul>
-<li>显示环境变量：printenv<ul>
-<li>PWD：当前目录路径 </li>
-<li>OLDPWD：上一次目录路径</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>~ ：当前用户家目录</li>
-<li>~mage ：用户mage家目录</li>
-<li>~+ ：当前工作目录</li>
-<li>~- ：前一个工作目录</li>
-</ul>
-<h5 id="8-显示目录"><a href="#8-显示目录" class="headerlink" title="8. 显示目录"></a>8. 显示目录</h5><ul>
-<li>列出当前目录的内容或指定目录(显示的数据都是元数据)</li>
-<li>用法：ls [options] [files_or_dirs]</li>
-<li>示例:<ul>
-<li>ls -a ：包含隐藏文件</li>
-<li>ls -l ：显示额外的信息</li>
-<li>ls -R ：目录递归显示</li>
-<li>ls -ld ： 目录和符号链接信息</li>
-<li>ls -1 ：文件分行显示</li>
-<li>ls –S ：按从大到小排序</li>
-<li>ls –t ： 按mtime排序</li>
-<li>ls –u ：配合-t选项，显示并按atime从新到旧排序</li>
-<li>ls –U : 按目录存放顺序显示</li>
-<li>ls –X : 按文件后缀排序</li>
-</ul>
-</li>
-</ul>
-<h5 id="9-查看文件状态-显示当前文件的时间戳"><a href="#9-查看文件状态-显示当前文件的时间戳" class="headerlink" title="9. 查看文件状态:显示当前文件的时间戳"></a>9. 查看文件状态:显示当前文件的时间戳</h5><p> <strong>命令：stat</strong></p>
-<ul>
-<li>文件：metadata, data</li>
-<li>三个时间戳：<ul>
-<li>access time：访问时间，atime，读取文件内容</li>
-<li>modify time: 修改时间, mtime，改变文件内容（数据）</li>
-<li>change time: 改变时间, ctime，元数据发生改变</li>
-</ul>
-</li>
-</ul>
-<p><strong>注意：<br>元数据发生变化，数据不一定变化<br>数据发生变化，元数据一定变化</strong></p>
-<h5 id="10-文件通配符（对文件名做通配）-glob、globing、wildcard"><a href="#10-文件通配符（对文件名做通配）-glob、globing、wildcard" class="headerlink" title="10. 文件通配符（对文件名做通配）(glob、globing、wildcard)"></a>10. 文件通配符（对文件名做通配）(glob、globing、wildcard)</h5><ul>
-<li>* ：匹配零个或多个字符</li>
-<li>? ：匹配任何单个字符</li>
-<li>[0-9] : 匹配数字范围</li>
-<li>[a-z] ：字母</li>
-<li>[A-Z] ：字母</li>
-<li>[wang] : 匹配列表中的任何的一个字符</li>
-<li>[^wang] : 匹配列表中的所有字符以外的字符</li>
-<li>预定义的字符类：（帮助：man 7 glob）<ul>
-<li>[:digit:]：任意数字，相当于0-9</li>
-<li>[:lower:]：任意小写字母</li>
-<li>[:upper:]：任意大写字母</li>
-<li>[:alpha:]：任意大小写字母</li>
-<li>[:alnum:]：任意数字或字母</li>
-<li>[:blank:]：水平空白字符</li>
-<li>[:space:]：水平或垂直空白字符</li>
-<li>[:punct:]：标点符号</li>
-<li>[:print:]：可打印字符 </li>
-<li>[:cntrl:]：控制（非打印）字符 </li>
-<li>[:graph:]：图形字符 </li>
-<li>[:xdigit:]：十六进制字符</li>
-</ul>
-</li>
-</ul>
-<h5 id="11-touch命令："><a href="#11-touch命令：" class="headerlink" title="11. touch命令："></a>11. touch命令：</h5><p><code>touch [OPTION]... FILE...</code></p>
-<ul>
-<li>-a   仅改变 atime和ctime</li>
-<li>-m  仅改变 mtime和ctime</li>
-<li>-t  [[CC]YY]MMDDhhmm[.ss]<br>指定atime和mtime的时间戳</li>
-<li>-c  如果文件不存在，则不予创建<blockquote>
-<p>例如：<code>touch -m -t 201806300000.00 /etc/passwd</code></p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# stat /etc/passwd</span><br><span class="line">File: `/etc/passwd&apos;</span><br><span class="line">Size: 1677      	Blocks: 8          IO Block: 4096           regular file</span><br><span class="line">Device: 803h/2051d	Inode: 787752      Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (   0/   root)  Gid: (0/  root)</span><br><span class="line">Access: 2018-07-26 18:57:44.311586312 +0800</span><br><span class="line">Modify: 2018-07-25 18:48:32.693647980 +0800</span><br><span class="line">Change: 2018-07-25 18:48:32.693647980 +0800</span><br><span class="line">[root@localhost ~]# touch -m -t 201806300000.00 /etc/passwd</span><br><span class="line">[root@localhost ~]# stat /etc/passwd</span><br><span class="line">File: `/etc/passwd&apos;</span><br><span class="line">Size: 1677      	Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: 803h/2051d	Inode: 787752      Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (  0/  root) Gid: ( 0/    root)</span><br><span class="line">Access: 2018-07-26 18:57:44.311586312 +0800</span><br><span class="line">Modify: 2018-06-30 00:00:00.000000000 +0800</span><br><span class="line">Change: 2018-07-27 14:13:22.439425983 +0800</span><br></pre></td></tr></table></figure>
-<h5 id="12-复制：所谓的复制就是创建一个新的空文件，然后在将源文件的数-据流读出来，然后写进去。"><a href="#12-复制：所谓的复制就是创建一个新的空文件，然后在将源文件的数-据流读出来，然后写进去。" class="headerlink" title="12. 复制：所谓的复制就是创建一个新的空文件，然后在将源文件的数  据流读出来，然后写进去。"></a>12. 复制：所谓的复制就是创建一个新的空文件，然后在将源文件的数  据流读出来，然后写进去。</h5><p>cp默认不复制目录下的内容，选项：-r：递归复制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.cp [OPTION]... [-T] SOURCE DEST</span><br><span class="line">2.cp [OPTION]... SOURCE... DIRECTORY</span><br><span class="line">3.cp [OPTION]... -t DIRECTORY SOURCE...（2.3等同）</span><br><span class="line">4.cp SRC DEST</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><p>SRC是文件：</p>
-<ul>
-<li>如果目标不存在：新建DEST，并将SRC中内容填充至DEST中</li>
-<li>如果目标存在：<ul>
-<li>如果DEST是文件：将SRC中的内容覆盖至DEST中。<br>基于安全，建议为cp命令使用-i选项。<ul>
-<li>如果DEST是目录：在DEST下新建与原文件同名的文件，并    将SRC中内容填充至新文件中。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>cp SRC… DEST</p>
-<ul>
-<li>SRC…：多个文件<ul>
-<li>DEST必须存在，且为目录，其它情形均会出错；</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>cp SRC DEST</p>
-<ul>
-<li>SRC是目录：此时使用选项：-r<ul>
-<li>如果DEST不存在：则创建指定目录，复制SRC目录中所有文件  至DEST中；</li>
-<li>如果DEST存在：<ul>
-<li>如果DEST是文件：报错</li>
-<li>如果DEST是目录</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>cp的常用选项</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-i：覆盖前提示	 –n:不覆盖，注意两者顺序</span><br><span class="line">-r, -R: 递归复制目录及内部的所有内容</span><br><span class="line">-a: 归档，相当于-dR --preserv=all</span><br><span class="line">-d：--no-dereference --preserv=links 不复制件，只  复制 链接名</span><br><span class="line">--preserv[=ATTR_LIST]  （元数据信息）</span><br><span class="line">    mode: 权限</span><br><span class="line">    ownership: 属主、属组</span><br><span class="line">    timestamp: （时间戳（atime、mtime不变）（cti会变））</span><br><span class="line">    links：链接属性</span><br><span class="line">    xattr：拓展属性</span><br><span class="line">    context：保持selinux的安全属性 </span><br><span class="line">    all：以上所有</span><br><span class="line">-p: 等同--preserv=mode,ownership,timestamp</span><br><span class="line">-v: --verbose 显示提示信息</span><br><span class="line">-f: --force 强制</span><br><span class="line">-u:--update 只复制源比目标更新文件或目标不存在的文件</span><br><span class="line">--backup=numbered 目标存在，覆盖前先备份加数字后缀</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>cp命令中：具体的流程是：</p>
-<p>分配一个空闲的inode号，在inode表中生成新条目，在目录中创建一个目录项，将名称inode编号关联<br>拷贝数据生成新的文件。</p>
-<h5 id="13-移动和重命名文件"><a href="#13-移动和重命名文件" class="headerlink" title="13. 移动和重命名文件"></a>13. 移动和重命名文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mv [OPTION]... [-T] SOURCE DEST</span><br><span class="line">mv [OPTION]... SOURCE... DIRECTORY</span><br><span class="line">mv [OPTION]... -t DIRECTORY SOURCE...</span><br></pre></td></tr></table></figure>
-<pre><code>常用选项： 
--i: 交互式
--f: 强制
-</code></pre><p>mv操作时，具体的流程是：</p>
-<p>如果mv命令的目标和源在相同的文件系统，作为mv 命令<br>用新的文件名创建对应新的目录项，删除旧目录条目对应的旧的文件名，不影响inode（除时间戳）或磁盘上的数据位置：没有数据被移动！</p>
-<p>如果目标和源在一个不同的文件系统， mv相当于cp和rm。</p>
-<h5 id="14-删除"><a href="#14-删除" class="headerlink" title="14. 删除"></a>14. 删除</h5><p><code>rm [OPTION]... FILE...</code></p>
-<p>常用选项：</p>
-<ul>
-<li>-i: 交互式</li>
-<li>-f: 强制删除</li>
-<li>-r: 递归</li>
-<li>–no-preserve-root : 强制删除/目录，忽略root<br>示例：<br>  rm -rf    /</li>
-</ul>
-<p>rm操作时候，具体的逻辑是：</p>
-<ul>
-<li>链接数递减，从而释放的inode号可以被重用</li>
-<li>把数据块放在空闲列表中</li>
-<li>删除目录项</li>
-<li>数据实际上不会马上被删除，但当另一个文件使用数据块时将被覆盖。</li>
-</ul>
-<h5 id="15-目录操作"><a href="#15-目录操作" class="headerlink" title="15. 目录操作"></a>15. 目录操作</h5><p>tree 显示目录树</p>
-<ul>
-<li>-d: 只显示类型为目录</li>
-<li>-L level：指定显示的层级数目</li>
-<li>-P ：pattern 只显示由指定pattern匹配到的路径<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# tree -P *Base* /etc/yum.repos.d/</span><br><span class="line">/etc/yum.repos.d/</span><br><span class="line">└── CentOS-Base.repo</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>mkdir 创建目录</p>
-<ul>
-<li>-p: 存在于不报错，且可自动创建所需的各目录</li>
-<li>-v: 显示详细信息</li>
-<li>-m MODE: 创建目录时直接指定权限<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# mkdir -p -v -m 777 /tmp/c</span><br><span class="line">mkdir: created directory `/tmp/c&apos;</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>rmdir 删除空目录</p>
-<ul>
-<li>-p: 递归删除父空目录</li>
-<li>-v: 显示详细信息</li>
-<li>rm -r 递归删除目录树<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# mkdir -p -v /tmp/x/y/z</span><br><span class="line">mkdir: created directory `/tmp/x&apos;</span><br><span class="line">mkdir: created directory `/tmp/x/y&apos;</span><br><span class="line">mkdir: created directory `/tmp/x/y/z&apos;</span><br><span class="line">[root@localhost ~]# rmdir -p -v /tmp/x/y/z</span><br><span class="line">rmdir: removing directory, `/tmp/x/y/z&apos;</span><br><span class="line">rmdir: removing directory, `/tmp/x/y&apos;</span><br><span class="line">rmdir: removing directory, `/tmp/x&apos;</span><br><span class="line">rmdir: removing directory, `/tmp&apos;</span><br><span class="line">rmdir: failed to remove directory `/tmp&apos;: Directory not     empty</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="16-索引节点"><a href="#16-索引节点" class="headerlink" title="16. 索引节点"></a>16. 索引节点</h5><p>inode（index node）表中包含文件系统所有文件列表<br>一个节点 （索引节点）是在一个表项(inode table)，包含有关文件的信息（ 元数据 包括：</p>
-<ul>
-<li>文件类型，权限，UID，GID</li>
-<li>链接数（指向这个文件名路径名称个数）</li>
-<li>该文件的大小和不同的时间戳</li>
-<li>指向磁盘上文件的数据块指针</li>
-<li>有关文件的其他数据</li>
-</ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/11830691-b45e402408acf428.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="inode结构表"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/11830691-056ec985b755059a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="inode存值形式"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/11830691-1a24908fb5a0b703.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="根据inode找文件步骤"></p>
-<p>文件引用一个是 inode号</p>
-<p>人是通过文件名来引用一个文件</p>
-<p>一个目录是目录下的文件名和文件inode号之间的映射</p>
-<h5 id="17-硬链接和软链接"><a href="#17-硬链接和软链接" class="headerlink" title="17. 硬链接和软链接"></a>17. 硬链接和软链接</h5><p>详细说明[<a href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/inde.html#listing1" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/inde.html#listing1</a>(<a href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/inde.html#listing1" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/inde.html#listing1</a> “转载自IBM博客”)</p>
-<p> <strong>1. 硬链接</strong></p>
-<ul>
-<li>创建硬链接会增加额外的记录项以引用文件</li>
-<li>对应于同一文件系统上一个物理文件</li>
-<li><strong>每个目录引用相同的inode号</strong></li>
-<li>创建时链接数递增</li>
-<li>删除文件时：<ul>
-<li>rm命令递减计数的链接</li>
-<li>文件要存在，至少有一个链接数</li>
-<li>当链接数为零时，该文件被删除</li>
-</ul>
-</li>
-<li>不能跨越驱动器或分区</li>
-<li>语法: <code>ln filename  [linkname ]</code><blockquote>
-<p>注意： 目录不能使用硬链接</p>
-</blockquote>
-</li>
-</ul>
-<p><strong>2. 软链接</strong></p>
-<ul>
-<li>一个符号链接指向另一个文件</li>
-<li>ls - l的 显示链接的名称和引用的文件</li>
-<li>一个符号链接的内容是它引用文件的名称</li>
-<li>可以对目录进行</li>
-<li>可以跨分区</li>
-<li><strong>指向的是另一个文件的路径；其大小为指向的路径字符串的长度；不增  - 加或减目标文件inode的引用计数；</strong></li>
-<li>语法：<code>ln -s  filename  ​​[linkname]</code><blockquote>
-<p>注意:加粗部分为硬链接和软链接的核心区别。</p>
-</blockquote>
-</li>
-</ul>
-<h5 id="18-确定文件内容"><a href="#18-确定文件内容" class="headerlink" title="18. 确定文件内容"></a>18. 确定文件内容</h5><p>文件可以包含多种类型的数据<br>检查文件的类型，然后确定适当的打开命令或应用程序使用</p>
-<p>语法：<code>file [options] &lt;filename&gt;...</code></p>
-<p>常用选项:</p>
-<ul>
-<li>-b 列出文件辨识结果时，不显示文件名称</li>
-<li>-f filelist 列出文件filelist中文件名的文件类型</li>
-<li>-F 使用指定分隔符号替换输出文件名后默认的”:”分隔符</li>
-<li>-L 查看对应软链接对应文件的文件类型</li>
-<li>–help 显示命令在线帮助</li>
-</ul>
-<h5 id="19-标准输入与输出"><a href="#19-标准输入与输出" class="headerlink" title="19. 标准输入与输出"></a>19. 标准输入与输出</h5><ul>
-<li>程序：指令+数据<ul>
-<li>读入数据：Input</li>
-<li>输出数据：Output</li>
-</ul>
-</li>
-<li>打开的文件都有一个fd: file descriptor (文件描述符)</li>
-<li>Linux给程序提供三种I/O设备<ul>
-<li>标准输入（STDIN）－0　默认接受来自键盘的输入</li>
-<li>标准输出（STDOUT）－1　默认输出到终端窗口</li>
-<li>标准错误（STDERR）－2　默认输出到终端窗口</li>
-</ul>
-</li>
-<li><p>I/O重定向：改变默认位置</p>
-</li>
-<li><p>输入重定向：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cat &gt; /tmp/luoq.txt &lt;&lt;EOF</span><br><span class="line">&gt; woshishui</span><br><span class="line">&gt; EOF</span><br><span class="line">[root@localhost ~]# cat /tmp/luoq.txt</span><br><span class="line">woshishui</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="20-把输出和错误重新定向到文件"><a href="#20-把输出和错误重新定向到文件" class="headerlink" title="20. 把输出和错误重新定向到文件"></a>20. 把输出和错误重新定向到文件</h5><ul>
-<li>STDOUT和STDERR可以被重定向到文件</li>
-<li>命令　操作符号　文件名</li>
-<li><p>支持的操作符号包括：</p>
-<ul>
-<li>> 　把STDOUT重定向到文件</li>
-<li>2&gt;　把STDERR重定向到文件</li>
-<li>&amp;&gt;　把所有输出重定向到文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# touch /tmp/error.txt;cat /tmp/luo.txt1 2&gt;/tmp/error.txt</span><br><span class="line">[root@localhost ~]# cat /tmp/error.txt</span><br><span class="line">cat: /tmp/luo.txt1: No such file or directory</span><br><span class="line">[root@localhost ~]# </span><br><span class="line">[root@localhost ~]# cat /tmp/luoq.txt &amp;&gt; /tmp/error.txt</span><br><span class="line">[root@localhost ~]# cat /tmp/error.txt</span><br><span class="line">woshishui</span><br><span class="line">[root@localhost ~]# cat /tmp/luoq.txt11 &amp;&gt;  /tmp/error.txt</span><br><span class="line">[root@localhost ~]# cat /tmp/error.txt</span><br><span class="line">cat: /tmp/luoq.txt11: No such file or directory</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>> 文件内容会被覆盖</p>
-<ul>
-<li>set –C  禁止将内容覆盖已有文件,但可追加</li>
-<li>>| file 强制覆盖</li>
-<li>set +C  允许覆盖</li>
-</ul>
-</li>
-<li>>&gt;  原有内容基础上，追加内容</li>
-<li>2&gt;    覆盖重定向错误输出数据流</li>
-<li>2&gt;&gt;     追加重定向错误输出数据流</li>
-<li>标准输出和错误输出各自定向至不同位置 <code>COMMAND &gt; /path/to/file.out 2&gt;/path/to/error.out</code></li>
-<li>合并标准输出和错误输出为同一个数据流进行重定向<ul>
-<li>&amp;&gt;   覆盖重定向</li>
-<li>&amp;&gt;&gt;  追加重定向</li>
-<li>COMMAND &gt; /path/to/file.out 2&gt;&amp;1 （顺序很重要）</li>
-<li>COMMAND &gt;&gt; /path/to/file.out 2&gt;&amp;1</li>
-<li>()：合并多个程序的STDOUT</li>
-<li>( cal 2007 ; cal 2008 ) &gt; all.</li>
-</ul>
-</li>
-</ul>
-<h5 id="21-tr命令"><a href="#21-tr命令" class="headerlink" title="21. tr命令"></a>21. tr命令</h5><p><strong>tr  转换和删除字符</strong></p>
-<ul>
-<li>语法:<code>tr [OPTION]... SET1 [SET2]</code></li>
-<li>选项：<ul>
-<li>-c –C –complement：取字符集的补集</li>
-<li>-d –delete：删除所有属于第一字符集的字符 </li>
-<li>-s –squeeze-repeats：把连续重复的字符以单独一个字符表示</li>
-<li>-t –truncate-set1：将第一个字符集对应字符转化为第二字符集对应的字符</li>
-<li>[:alnum:]：字母和数字 [:alpha:]：字母 [:cntrl:]：控制（非打印）字符 [:digit:]：数字 [:graph:]：图形字符 [:lower:]：小写字母 [:print:]：可打印字符 [:punct:]：标点符号 [:space:]：空白字符 [:upper:]：大写字母 [:xdigit:]：十六进制字符<blockquote>
-<p>例如：<code>tr ‘a-z’   ‘A-Z’&lt; /etc/issue</code></p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-<h5 id="22-管道"><a href="#22-管道" class="headerlink" title="22. 管道"></a>22. 管道</h5><ul>
-<li>管道（使用符号“|”表示）用来连接命令</li>
-<li><p>命令1 | 命令2 | 命令3 | …</p>
-<ul>
-<li>将命令1的STDOUT发送给命令2的STDIN，命令2的STDOUT送到命令3的STDIN</li>
-<li>STDERR默认不能通过管道转发，可利用2&gt;&amp;1 或 |&amp; 实现</li>
-<li>最后一个命令会在当前shell进程的子shell进程中执行来</li>
-<li>组合多种工具的功能</li>
-<li>ls  | tr ‘a-z’ ‘A-Z’</li>
-</ul>
-</li>
-<li><p>有些命令不支持管道传输过来的数据，可以加上 - 执行</p>
-</li>
-</ul>
-<h5 id="23-tee命令，一路输入两路输出"><a href="#23-tee命令，一路输入两路输出" class="headerlink" title="23. tee命令，一路输入两路输出"></a>23. tee命令，一路输入两路输出</h5><ul>
-<li>命令1 | tee　[-a ] 文件名 | 命令2 <ul>
-<li>把命令1的STDOUT保存在文件中，做为命令2的输入</li>
-<li>-a 追加</li>
-</ul>
-</li>
-<li>使用：<ul>
-<li>保存不同阶段的输出</li>
-<li>复杂管道的故障排除</li>
-<li>同时查看和记录输出<blockquote>
-<p>例如：<code>[root@localhost ~]# cat /etc/passwd | tr -d &#39;abc&#39; | tr &#39;d-z&#39; &#39;D-Z&#39; | tee /tmp/luo.txt</code></p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-<h5 id="24-selinux：安全Linux策略"><a href="#24-selinux：安全Linux策略" class="headerlink" title="24. selinux：安全Linux策略"></a>24. selinux：安全Linux策略</h5><ul>
-<li>配置文件在/etc/selinux/config ：</li>
-<li>查看状态的命令：getenforce  <ul>
-<li>三种状态：<ul>
-<li>enforcing：强制：违反规则不能运行</li>
-<li>permissive许可：可以允许运行，但是会记录，用来后期的审计</li>
-<li>disabled：禁用：关闭selinux</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h5 id="25-历史命令：history的环境变量配置："><a href="#25-历史命令：history的环境变量配置：" class="headerlink" title="25. 历史命令：history的环境变量配置："></a>25. 历史命令：history的环境变量配置：</h5><p><strong>HISTCONTROL</strong></p>
-<ul>
-<li>-ignoredups（忽略重复）</li>
-<li>-ignorespace（忽略空格）    </li>
-<li>-ignoreboth（忽略所有)</li>
-</ul>
-<h5 id="26-权限"><a href="#26-权限" class="headerlink" title="26.权限"></a>26.权限</h5><p>认证；授权：审计 Authentication；Authorization；Adition</p>
-
-          
-        
-      
+        <p class="brief">
+            
+                使用管理员权限打开window命令提示符输入如下即可cmd /k reg add &amp;quot;HKEY_CLASSES_ROOT\Directory\Background\shellex\ContextMenuHandlers\New...
+            
+        </p>
     </div>
     
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luoqian67.github.io/blog/blog/2018/07/26/在Windows10中添加新建的右键/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luo Qian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
     </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="个人博客">
-    </span>
-
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
                 
-                <a class="post-title-link" href="/blog/2018/07/26/在Windows10中添加新建的右键/" itemprop="url">在Windows10中给右键中添加新建的方式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T20:15:17+08:00">
-                2018-07-26
-              </time>
-            
+        </span>
+    </span>
+    
 
-            
+    
+</div>
 
-            
-          </span>
+            </div>
 
-          
+            <div class="post-permalink">
+                <a href="/blog/2018/07/26/在Windows10中添加新建的右键/" class="btn btn-default">Read</a>
+            </div>
+        </footer>
+    
+</article>
 
-          
-            
-          
 
-          
-          
-
-          
-
-          
-
-          
-
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/blog/2018/07/25/在eclipse中部署项目web有时候访问jsp会抛出以下类似的异常信息/">在eclipse中部署项目web有时候访问jsp会抛出以下类似的异常信息</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2018年07月25日
+                </time>
+            </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="使用管理员权限打开window命令提示符输入如下即可"><a href="#使用管理员权限打开window命令提示符输入如下即可" class="headerlink" title="使用管理员权限打开window命令提示符输入如下即可"></a>使用管理员权限打开window命令提示符输入如下即可</h2><pre><code>cmd /k reg add &quot;HKEY_CLASSES_ROOT\Directory\Background\shellex\ContextMenuHandlers\New&quot; /ve /t REG_SZ /d {D969A300-E7FF-11d0-A93B-00A0C90F2719} /f
-</code></pre>
-          
-        
-      
+        <p class="brief">
+            
+                在eclipse中部署项目web有时候访问jsp会抛出以下类似的异常信息org.apache.jasper.JasperException: The absolute uri: http://java.sun.com/jsp 
+  部...
+            
+        </p>
     </div>
     
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luoqian67.github.io/blog/blog/2018/07/25/在eclipse中部署项目web有时候访问jsp会抛出以下类似的异常信息/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luo Qian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
     </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="个人博客">
-    </span>
-
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
                 
-                <a class="post-title-link" href="/blog/2018/07/25/在eclipse中部署项目web有时候访问jsp会抛出以下类似的异常信息/" itemprop="url">在eclipse中部署项目web有时候访问jsp会抛出以下类似的异常信息</a></h1>
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/2018/07/25/在eclipse中部署项目web有时候访问jsp会抛出以下类似的异常信息/" class="btn btn-default">Read</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+
+
+
+
+                </main>
+                
+                    
+    <aside class="col-md-4 sidebar">
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-25T20:58:17+08:00">
-                2018-07-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+        
+    <div class="widget">
+        <h3 class="title">Search</h3>
+        <div id="search-form">
+            <div id="result-mask" class="hide"></div>
+            <div class="search-area">
+                
+                    <input id="search-key" type="search" autocomplete="off" placeholder="Search What？">
+                    <button type="button" class="search-form-submit" id="search-local">localSearch</button>
+                
+                
+                    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Google Search"><button type="submit" class="search-form-submit">谷歌搜索</button><input type="hidden" name="sitesearch" value="http://luoqian67.github.io/blog"></form>
+                
+            </div>
+            <div id="result-wrap" class="hide">
+                <div id="search-result"></div>
+            </div>
+            <div class="hide">
+                <template id="search-tpl">
+                    <div class="item">
+                        <a href="/{path}" title="{title}">
+                            <div class="title">{title}</div>
+                            <div class="content">{content}</div>
+                        </a>
+                    </div>
+                </template>
+            </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="在eclipse中部署项目web有时候访问jsp会抛出以下类似的异常信息"><a href="#在eclipse中部署项目web有时候访问jsp会抛出以下类似的异常信息" class="headerlink" title="在eclipse中部署项目web有时候访问jsp会抛出以下类似的异常信息"></a>在eclipse中部署项目web有时候访问jsp会抛出以下类似的异常信息</h1><pre><code>org.apache.jasper.JasperException: The absolute uri: http://java.sun.com/jsp 
-</code></pre><p>  部署web项目，如果抛出此异常。请保证 standard.jar与jstl.jar 两个jar包是否 在部署的项目中存在，如果不存在，请把，这两个包加入 /WEB-INF/lib 中。然后保证jsp中引用的版本地址 和 此版本地址是一致的：</p>
-<pre><code>&lt;%@ taglib uri=&quot;http://java.sun.com/jsp/jstl/core&quot;prefix=&quot;c&quot;%&gt;&lt;%@ taglib uri=&quot;http://java.sun.com/jsp/jstl/fmt&quot;prefix=&quot;f&quot;%&gt;&lt;%@ taglib prefix=&quot;fn&quot;uri=&quot;http://java.sun.com/jsp/jstl/functions&quot;%&gt;
-</code></pre><p>CSDN下载路径：<a href="https://download.csdn.net/download/weixin_42216574/10416519" target="_blank" rel="noopener">https://download.csdn.net/download/weixin_42216574/10416519</a></p>
-
-          
-        
-      
     </div>
-    
-    
-    
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-
-
-          </div>
-          
-
-
-          
-
+        
+        
+    <div class="widget notification">
+        <h3 class="title">Notification</h3>
+        <div>
+            <p>
+python爱好者
+</p>
         </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-  </div>
 
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        
+        
+    <div class="widget">
+      <h3 class="title">Social</h3> 
+        <div class="content social">
             
-              <p class="site-author-name" itemprop="name">Luo Qian</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
+	            <a href="https://github.com/luoqian67" rel="external nofollow" title="Github" target="_blank">
+			    	<i class="git fa fa-git"></i>
+			    </a>
             
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/blog/archives/">
-              
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
+	            <a href="mailto:snippet@91h5.cc" rel="external nofollow" title="邮箱" target="_blank">
+			    	<i class="envelope-o fa fa-envelope-o"></i>
+			    </a>
             
-
+	            <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
+			    	<i class="qq fa fa-qq"></i>
+			    </a>
             
-
+	            <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
+			    	<i class="feed fa fa-feed"></i>
+			    </a>
             
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
         </div>
-      </section>
-
-      
-
-      
-
     </div>
-  </aside>
 
 
         
-      </div>
-    </main>
+        
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Luo Qian</span>
+        
+        
+    <div class="widget">
+      <h3 class="title">Archives</h3>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/"><i class="fa" aria-hidden="true">2018年07月</i></a><span class="archive-list-count">4</span></li></ul>
+    </div>
 
-  
+
+        
+        
+
+        
+        
+    <div class="widget">
+        <h3 class="title">Friends</h3>
+        <div class="content friends-link">
+        
+            <a href="https://www.jianshu.com/u/37c221b038c4" class="fa" target="_blank">个人博客</a>
+        
+        </div>
+    </div>
+
+
+        
+    </aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+	<script src="/blog/js/search.js?rev=@@hash"></script>
 
 
+<script src="/blog/js/app.js?rev=@@hash"></script>
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>
