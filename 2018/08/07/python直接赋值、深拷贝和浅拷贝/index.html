@@ -33,7 +33,7 @@
     <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml">
 
 
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="img/favicon.ico">
 
     
 
@@ -59,6 +59,7 @@
 
 
     
+
 </head>
 
 
@@ -115,7 +116,7 @@
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/archives/2018/"><i class="fa "></i>时间轴</a>
+                                <a href="/blog/archives/2018/"><i class="fa "></i>时间轴</a>
                             </li>
                         
                     </ul>
@@ -175,7 +176,9 @@
     </div>
     
     <div class="post-body post-content">
-        
+        <p>python中，对象赋值实际上是对象的引用。当创建一个对象，将其赋值给另一个变量，python并没有拷贝这个对象，而是拷贝了这个对象的引用。 所以如果从单纯的赋值语句来实现clone对象的话， 那可能bug出现的也会莫名其妙. Python中可以使用copy模块来复制对象.</p>
+<p>copy.copy 为浅拷贝, 只copy父对象， 不会拷贝对象内部的子对象 copy.deepcopy 深拷贝, 拷贝对象及其子对象</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> copy</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,[<span class="string">'a'</span>,<span class="string">'b'</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = a                    <span class="comment"># 赋值拷贝</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = copy.copy(a)         <span class="comment"># 浅拷贝, 只拷贝了a的引用, 内部元素没有拷贝.</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = copy.deepcopy(a)     <span class="comment"># 深拷贝, 完全拷贝</span></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.append(<span class="number">5</span>)       </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">4</span>].append(<span class="string">'c'</span>)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="string">'a='</span>,a</span><br><span class="line">a= [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], <span class="number">5</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="string">'b='</span>,b</span><br><span class="line">b= [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], <span class="number">5</span>]   <span class="comment">#赋值拷贝, 内存地址指向一样的。 相当于一个人的两个名字而已.</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="string">'c='</span>,c</span><br><span class="line">c= [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]]      <span class="comment">#浅拷贝, 子元素c[4]引用的地址和a[4]是一样的. 所以改变a[4]相当于改了c[4].</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="string">'d='</span>,d</span><br><span class="line">d= [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>]]           <span class="comment">#深拷贝完全拷贝. a和d完全改变了.</span></span><br></pre></td></tr></table></figure>
     </div>
 
     <div class="post-footer">
@@ -212,8 +215,8 @@
         new Valine({
             av: AV,
             el: '#vcomments',
-            appId: '',
-            appKey: '',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
             placeholder: '说点什么吧',
             notify: false,
             verify: false,
@@ -265,7 +268,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12"> 
-                <span>Copyright &copy; 2018
+                <span>Copyright &copy; 2017
                 </span> | 
                 <span>
                     Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
