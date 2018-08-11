@@ -1,0 +1,553 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="个人博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://luoqian67.github.io/blog">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>Linux基础-权限管理 | 个人博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="img/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/blog/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/blog/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/blog/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Luo Qian'>
+            <img src="/blog/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/blog/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://luoqian67.github.io/blog">个人博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/blog/categories/Linux/"><i class="fa "></i>Linux</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/blog/categories/python/"><i class="fa "></i>python</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/blog/categories/杂项教程/"><i class="fa "></i>杂项</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/blog/archives/2018/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Linux基础-权限管理">
+            
+	            Linux基础-权限管理
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/Linux">
+            Linux
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Linux" title='Linux'>
+                        Linux
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/07/28</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="Linux基础-权限管理"><a href="#Linux基础-权限管理" class="headerlink" title="Linux基础-权限管理"></a>Linux基础-权限管理</h1><h3 id="一-权限管理"><a href="#一-权限管理" class="headerlink" title="一.权限管理"></a>一.权限管理</h3><h4 id="1-用户权限："><a href="#1-用户权限：" class="headerlink" title="1.用户权限："></a>1.用户权限：</h4><p><strong>认证：1.1 Authentication；授权：Authorization；审计：Adition</strong></p>
+<h4 id="1-2-Linux用户和组的主要配置文件："><a href="#1-2-Linux用户和组的主要配置文件：" class="headerlink" title="1.2 Linux用户和组的主要配置文件："></a>1.2 Linux用户和组的主要配置文件：</h4><ul>
+<li>/etc/passwd：用户及其属性信息（名称、UID、主组ID等）</li>
+<li>/etc/group：组及其属性信息</li>
+<li>/etc/shadow：用户密码及其相关属性</li>
+<li>/etc/gshadow：组密码及其相关属性</li>
+</ul>
+<h4 id="1-3-安全上下文：进程代表用户在进行：谁启动了进程，进程就拥有谁的身份（以进程（process）发起者的身份运行）。"><a href="#1-3-安全上下文：进程代表用户在进行：谁启动了进程，进程就拥有谁的身份（以进程（process）发起者的身份运行）。" class="headerlink" title="1.3 安全上下文：进程代表用户在进行：谁启动了进程，进程就拥有谁的身份（以进程（process）发起者的身份运行）。"></a>1.3 安全上下文：进程代表用户在进行：谁启动了进程，进程就拥有谁的身份（以进程（process）发起者的身份运行）。</h4><ul>
+<li>root:/bin/cat</li>
+<li>mage:/bin/cat</li>
+</ul>
+<h4 id="1-4-用户"><a href="#1-4-用户" class="headerlink" title="1.4 用户"></a>1.4 用户</h4><h5 id="1-4-1-用户User："><a href="#1-4-1-用户User：" class="headerlink" title="1.4.1 用户User："></a>1.4.1 用户User：</h5><ul>
+<li>令牌token,identity</li>
+<li>Linux用户：Username/UID</li>
+<li>用户级别：<ul>
+<li>管理员：root, 0</li>
+<li>普通用户：1-65535<ul>
+<li>系统用户：1-499, 1-999 （CentOS7）<ul>
+<li>对守护进程获取资源进行权限分配</li>
+</ul>
+</li>
+<li>登录用户:500+, 1000+（CentOS7）<ul>
+<li>交互式登录</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="1-4-2-passwd文件格式："><a href="#1-4-2-passwd文件格式：" class="headerlink" title="1.4.2 passwd文件格式："></a>1.4.2 passwd文件格式：</h5><ul>
+<li>login name：登录用名（wang）</li>
+<li>passwd：密码  (x)</li>
+<li>UID：用户身份编号 (1000)</li>
+<li>GID：登录默认所在组编号  (1000)</li>
+<li>GECOS：用户全名或注释</li>
+<li>home directory：用户主目录 (/home/wang)</li>
+<li><p>shell：用户默认使用shell (/bin/bash)</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tcpdump:x:72:72::/:/sbin/nologin</span><br><span class="line">vampire:x:500:500:vampire:/home/vampire:/bin/bash</span><br><span class="line">mysql:x:27:27:MySQL Server:/var/lib/mysql:/bin/false</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="1-4-3-shadow文件格式："><a href="#1-4-3-shadow文件格式：" class="headerlink" title="1.4.3 shadow文件格式："></a>1.4.3 shadow文件格式：</h5><ul>
+<li>登录用名</li>
+<li>用户密码:一般用sha512加密</li>
+<li>从1970年1月1日起到密码最近一次被更改的时间</li>
+<li>密码再过几天可以被变更（0表示随时可被变更）</li>
+<li>密码再过几天必须被变更（99999表示永不过期）</li>
+<li>密码过期前几天系统提醒用户（默认为一周）</li>
+<li>密码过期几天后帐号会被锁定</li>
+<li>从1970年1月1日算起，多少天后帐号失效  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tcpdump:!!:17735::::::</span><br><span class="line">vampire:$6$yk7XOpZX0ZngOz6D$qVI/.Q7Ch7M.KRfjsPC.    WTiN9w2qJgUofENaFlnLxXpvzIN/lICVwcIme1b3LHMixqXxnEIGkgepuUIpsoadU1:1773 5:0:99999:7:::</span><br><span class="line">mysql:!!:17737::::::</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="1-4-4-用户创建"><a href="#1-4-4-用户创建" class="headerlink" title="1.4.4 用户创建"></a>1.4.4 用户创建</h5><p>语法：<code>useradd [options] LOGIN</code></p>
+<ul>
+<li>-u UID </li>
+<li>-o 配合-u 选项，不检查UID的唯一性</li>
+<li>-g GID：指明用户所属基本组，可为组名，也可以GID</li>
+<li>-c “COMMENT”：用户的注释信息</li>
+<li>-d HOME_DIR: 以指定的路径(不存在)为家目录</li>
+<li>-s SHELL: 指明用户的默认shell程序<pre><code>可用列表在/etc/shells文件中
+</code></pre></li>
+<li>-G GROUP1[,GROUP2,…]：为用户指明附加组，组须事先存在</li>
+<li>-N 不创建私用组做主组，使用users组做主组</li>
+<li>-r: 创建系统用户 CentOS 6: ID&lt;500，CentOS 7: ID&lt;1000</li>
+<li>-m  创建家目录，用于系统用户</li>
+<li><p>-M  不创建家目录，用于非系统用户</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# useradd -u 111 luqoian  -c &quot;vamp&quot; -s /bin/csh -m</span><br><span class="line">[root@localhost ~]# tail -1 /etc/passwd</span><br><span class="line">luqoian:x:111:501:vamp:/home/luqoian:/bin/csh</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="1-4-5-用户属性的修改："><a href="#1-4-5-用户属性的修改：" class="headerlink" title="1.4.5 用户属性的修改："></a>1.4.5 用户属性的修改：</h5><p>语法：`usermod [OPTION] login</p>
+<ul>
+<li>-u UID: 新UID</li>
+<li>-g GID: 新主组</li>
+<li>-G GROUP1[,GROUP2,…[,GROUPN]]]：新附加组，原来的附加组将会被覆盖；若保留原有，则要同时使用-a选项</li>
+<li>-s SHELL：新的默认SHELL</li>
+<li>-c ‘COMMENT’：新的注释信息</li>
+<li>-d HOME: 新家目录不会自动创建；若要创建新家目录并移动原家数据，同时使用-m选项</li>
+<li>-l login_name: 新的名字；</li>
+<li>-L: lock指定用户,在/etc/shadow 密码栏的增加 ! </li>
+<li>-U: unlock指定用户,将 /etc/shadow 密码栏的 ! 拿掉</li>
+<li>-e YYYY-MM-DD: 指明用户账号过期日期</li>
+<li>-f INACTIVE: 设定非活动期限</li>
+</ul>
+<h5 id="1-4-6-删除用户："><a href="#1-4-6-删除用户：" class="headerlink" title="1.4.6 删除用户："></a>1.4.6 删除用户：</h5><p>语法：<code>userdel [OPTION]... login</code></p>
+<ul>
+<li>-r: 删除用户家目录</li>
+</ul>
+<h5 id="1-4-7-切换用户或以其他用户身份执行命令"><a href="#1-4-7-切换用户或以其他用户身份执行命令" class="headerlink" title="1.4.7 切换用户或以其他用户身份执行命令"></a>1.4.7 切换用户或以其他用户身份执行命令</h5><p>语法：<code>su [options...] [-] [user [args...]]</code></p>
+<ul>
+<li>切换用户的方式：<ul>
+<li>su UserName：非登录式切换，即不会读取目标用户的配置文件，不改变当前工作目录</li>
+<li>su - UserName：登录式切换，会读取目标用户的配置文件，切换至家目录，完全切换</li>
+</ul>
+</li>
+<li>root su至其他用户无须密码；非root用户切换时需要密码</li>
+<li>换个身份执行命令：<br>  <code>su [-] UserName -c &#39;COMMAND&#39;</code></li>
+<li>选项：<code>-l  --login</code><pre><code>`su -l UserName  相当于 su - UserName`
+</code></pre></li>
+</ul>
+<h5 id="1-4-8-修改密码"><a href="#1-4-8-修改密码" class="headerlink" title="1.4.8 修改密码"></a>1.4.8 修改密码</h5><p>语法：<code>passwd [OPTIONS] UserName:</code>修改指定用户的密码</p>
+<ul>
+<li>常用选项：<ul>
+<li>-d:删除指定用户密码</li>
+<li>-l:锁定指定用户</li>
+<li>-u:解锁指定用户</li>
+<li>-e:强制用户下次登录修改密码</li>
+<li>-f: 强制操作</li>
+<li>-n mindays: 指定最短使用期限</li>
+<li>-x maxdays：最大使用期限</li>
+<li>-w warndays：提前多少天开始警告</li>
+<li>-i inactivedays：非活动期限</li>
+<li>–stdin：从标准输入接收用户密码<br> echo “PASSWORD” | passwd –stdin USERNAME</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-5-组"><a href="#1-5-组" class="headerlink" title="1.5 组"></a>1.5 组</h4><h5 id="1-5-1-Linux组的类别"><a href="#1-5-1-Linux组的类别" class="headerlink" title="1.5.1 Linux组的类别"></a>1.5.1 Linux组的类别</h5><ul>
+<li>用户的主要组（primary group）<ul>
+<li>用户必须属于一个且只有一个主组</li>
+<li>组名同用户名，且仅包含一个用户，私有组</li>
+</ul>
+</li>
+<li>用户的附加组（supplementary group）<ul>
+<li>一个用户可以属于零个或多个附加组</li>
+</ul>
+</li>
+</ul>
+<h5 id="1-5-2-组group："><a href="#1-5-2-组group：" class="headerlink" title="1.5.2 组group："></a>1.5.2 组group：</h5><ul>
+<li>Linux组：Groupname/GID</li>
+<li>管理员组：root, 0</li>
+<li>普通组：<ul>
+<li>系统组：1-499, 1-999（CENTOS7）</li>
+<li>普通组：500+, 1000+（CENTOS7）</li>
+</ul>
+</li>
+</ul>
+<h5 id="1-5-3-group文件格式"><a href="#1-5-3-group文件格式" class="headerlink" title="1.5.3 group文件格式"></a>1.5.3 group文件格式</h5><ul>
+<li>群组名称：就是群组名称</li>
+<li>群组密码：通常不需要设定，密码是被记录在 /etc/gshadow </li>
+<li>GID：就是群组的 ID </li>
+<li>以当前组为附加组的用户列表(分隔符为逗号)  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cat /etc/group</span><br><span class="line">root:x:0:</span><br><span class="line">bin:x:1:bin,daemon</span><br><span class="line">daemon:x:2:bin,daemon</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="1-5-4-gshadow文件格式"><a href="#1-5-4-gshadow文件格式" class="headerlink" title="1.5.4 gshadow文件格式"></a>1.5.4 gshadow文件格式</h5><ul>
+<li>群组名称：就是群组名称</li>
+<li>群组密码：</li>
+<li>组管理员列表：组管理员的列表，更改组密码和成员</li>
+<li><p>以当前组为附加组的用户列表：(分隔符为逗号)</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cat /etc/gshadow</span><br><span class="line">root:::</span><br><span class="line">bin:::bin,daemon</span><br><span class="line">daemon:::bin,daemon</span><br><span class="line">sys:::bin,adm</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="1-5-5-创建组："><a href="#1-5-5-创建组：" class="headerlink" title="1.5.5 创建组："></a>1.5.5 创建组：</h5><p>语法：<code>groupadd [OPTION]... group_name</code></p>
+<ul>
+<li>-g GID: 指明GID号；[GID_MIN, GID_MAX]</li>
+<li>-r: 创建系统组<ul>
+<li>CentOS 6: ID&lt;500</li>
+<li>CentOS 7: ID&lt;1000</li>
+</ul>
+</li>
+</ul>
+<h5 id="1-5-6-修改和删除组："><a href="#1-5-6-修改和删除组：" class="headerlink" title="1.5.6 修改和删除组："></a>1.5.6 修改和删除组：</h5><ul>
+<li><p>组属性修改：groupmod<br>语法：</p>
+<figure class="highlight plain"><figcaption><span>[OPTION]... group</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-n group_name: 新名字</span><br><span class="line">-g GID: 新的GID</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组删除：groupdel<br>  <code>groupdel GROUP</code></p>
+</li>
+</ul>
+<h5 id="1-5-7-更改组密码"><a href="#1-5-7-更改组密码" class="headerlink" title="1.5.7 更改组密码"></a>1.5.7 更改组密码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">组密码：gpasswd</span><br><span class="line">gpasswd [OPTION] GROUP</span><br><span class="line"> -a user  将user添加至指定组中</span><br><span class="line"> -d user  从指定组中移除用户user</span><br><span class="line"> -A user1,user2,...  设置有管理权限的用户列表</span><br><span class="line">newgrp命令：临时切换主组</span><br><span class="line">        如果用户本不属于此组，则需要组密码</span><br></pre></td></tr></table></figure>
+<h4 id="2-文件权限："><a href="#2-文件权限：" class="headerlink" title="2 文件权限："></a>2 文件权限：</h4><h5 id="2-1-文件的权限主要针对三类对进行定义"><a href="#2-1-文件的权限主要针对三类对进行定义" class="headerlink" title="2.1 文件的权限主要针对三类对进行定义"></a>2.1 文件的权限主要针对三类对进行定义</h5><ul>
+<li>owner: 属主, u，文档所有者</li>
+<li>group: 属组, g，文档所属组用户</li>
+<li>other: 其他, o，其他用户</li>
+<li>每个文件针对每类访问者都义了三种权限<ul>
+<li>r: Readable：读</li>
+<li>w: Writable：写</li>
+<li>x: eXcutable：执行</li>
+</ul>
+</li>
+</ul>
+<h5 id="2-2-文件和目录权限的区别："><a href="#2-2-文件和目录权限的区别：" class="headerlink" title="2.2 文件和目录权限的区别："></a>2.2 文件和目录权限的区别：</h5><ul>
+<li>文件：<ul>
+<li>r: 可使用文件查看类工具获取其内容</li>
+<li>w: 可修改其内容</li>
+<li>x: 可以把此文件提请内核启动为一个进程</li>
+</ul>
+</li>
+<li>目录：<ul>
+<li>r: 可以使用ls查看此目录中文件列表</li>
+<li>w: 可在此目录中创建文件，也可删除此目录中的文件</li>
+<li>x: 可以使用ls -l查看此目录中文件列表，可以cd进入此目录</li>
+</ul>
+</li>
+</ul>
+<h5 id="2-3-修改文件权限："><a href="#2-3-修改文件权限：" class="headerlink" title="2.3 修改文件权限："></a>2.3 修改文件权限：</h5><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">chmod [OPTION]... OCTAL-MODE FILE...</span><br><span class="line">      -R: 递归修改权限（改目录的时候想修改目录内部所有文件的权限，但是不建议）</span><br><span class="line">chmod [OPTION]... MODE[,MODE]... FILE...</span><br><span class="line">      MODE：</span><br><span class="line">      修改一类用户的所有权限：</span><br><span class="line">	    u=  g= o= ug=  a= u=,g=</span><br><span class="line">      修改一类用户某位或某些位权限</span><br><span class="line">	    u+  u- g+ g- o+ o- a+ a- + -</span><br><span class="line">chmod [OPTION]... --reference=RFILE FILE...</span><br><span class="line">	（referance）参考RFILE文件的权限，将FILE的修改为同RFILE</span><br></pre></td></tr></table></figure>
+</code></pre><h5 id="2-4-修改文件的属组和属主："><a href="#2-4-修改文件的属组和属主：" class="headerlink" title="2.4 修改文件的属组和属主："></a>2.4 修改文件的属组和属主：</h5><ul>
+<li>修改文件的属主：chown<ul>
+<li>chown [OPTION]… [OWNER][:[GROUP]] FILE…</li>
+<li>用法：<ul>
+<li>OWNER</li>
+<li>OWNER:GROUP</li>
+<li>:GROUP</li>
+<li>命令中的冒号可用.替换</li>
+<li>-R: 递归</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>语法：<code>-chown [OPTION]... --reference=RFILE FILE...</code></li>
+<li>修改文件的属组：chgrp  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chgrp [OPTION]... GROUP FILE...</span><br><span class="line">chgrp [OPTION]... --reference=RFILE FILE...</span><br><span class="line">-R 递归</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><strong>注意：</strong></p>
+<pre><code>- (权限一定要给全，不然会从左边补全，例如如果给77，则默认为077）
+- (目录一定要有执行权限，普通文件不能随便给执行权限（防止一些恶意文件留后门）)，
+- (只写+w,只有属主加写权限)
+</code></pre></blockquote>
+<h5 id="2-5-新建文件和目录的默认权限"><a href="#2-5-新建文件和目录的默认权限" class="headerlink" title="2.5 新建文件和目录的默认权限"></a>2.5 新建文件和目录的默认权限</h5><ul>
+<li>umask值 可以用来保留在创建文件权限</li>
+<li>新建FILE权限: 666-umask<ul>
+<li>如果所得结果某位存在执行（奇数）权限，则将其权限+1</li>
+</ul>
+</li>
+<li>新建DIR权限: 777-umask    </li>
+<li>非特权用户umask是 002</li>
+<li>root的umask 是 022</li>
+<li>umask: 查看</li>
+<li>umask #: 设定<ul>
+<li>umask 002</li>
+</ul>
+</li>
+<li>umask –S 模式方式显示</li>
+<li>umask –p 输出可被调用</li>
+<li>全局设置： /etc/bashrc 用户设置：~/.bashrc</li>
+</ul>
+<h5 id="2-6-访问控制列表"><a href="#2-6-访问控制列表" class="headerlink" title="2.6 访问控制列表"></a>2.6 访问控制列表</h5><ul>
+<li>ACL：Access Control List，实现灵活的权限管理</li>
+<li>除了文件的所有者，所属组和其它人，可以对更多的用户设置权限 </li>
+<li>CentOS7 默认创建的xfs和ext4文件系统具有ACL功能</li>
+<li>CentOS7 之前版本，默认手工创建的ext4文件系统无ACL功能,需手动增加<ul>
+<li>tune2fs –o acl /dev/sdb1</li>
+<li>mount –o acl /dev/sdb1  /mnt/test</li>
+</ul>
+</li>
+<li><p>ACL生效顺序：所有者，自定义用户，自定义组，其他人</p>
+</li>
+<li><p>为多用户或者组的文件和目录赋予访问权限rwx</p>
+<ul>
+<li>mount -o acl /directory</li>
+<li>getfacl  file |directory</li>
+<li>setfacl  -m  u:wang:rwx file|directory</li>
+<li>setfacl  -Rm g:sales:rwX directory </li>
+<li>setfacl  -M  file.acl file|directory</li>
+<li>setfacl  -m  g:salesgroup:rw file| directory</li>
+<li>setfacl  -m  d:u:wang:rx  directory </li>
+<li>setfacl  -x  u:wang  file |directory</li>
+<li>setfacl  -X file.acl  directory<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# getfacl linux222.txt</span><br><span class="line"># file: linux222.txt</span><br><span class="line"># owner: root</span><br><span class="line"># group: root </span><br><span class="line">user::rw-</span><br><span class="line">group::r--</span><br><span class="line">other::r--</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# setfacl -m u:vampire:wx linux222.txt</span><br><span class="line">[root@localhost ~]# getfacl linux222.txt</span><br><span class="line"># file: linux222.txt</span><br><span class="line"># owner: root</span><br><span class="line"># group: root</span><br><span class="line">user::rw-</span><br><span class="line">user:vampire:-wx</span><br><span class="line">group::r--</span><br><span class="line">mask::rwx</span><br><span class="line">other::r--</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">https://luoqian67.github.io/blog/</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/blog/2018/07/28/centos6下部署Java Web项目/" class="pre-post btn btn-default" title='centos6下部署Java Web项目'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">centos6下部署Java Web项目</span>
+        </a>
+    
+    
+        <a href="/blog/2018/07/27/Linux基础-文件管理和重定向/" class="next-post btn btn-default" title='Linux基础-文件管理和重定向'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Linux基础-文件管理和重定向</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/blog/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xme1rFxnnyLwK8UFBgckpusw-gzGzoHsz',
+            appKey: 'u9MbOVN8LcSmPkewWeQKtEnJ',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux基础-权限管理"><span class="toc-text">Linux基础-权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-权限管理"><span class="toc-text">一.权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-用户权限："><span class="toc-text">1.用户权限：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-Linux用户和组的主要配置文件："><span class="toc-text">1.2 Linux用户和组的主要配置文件：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-安全上下文：进程代表用户在进行：谁启动了进程，进程就拥有谁的身份（以进程（process）发起者的身份运行）。"><span class="toc-text">1.3 安全上下文：进程代表用户在进行：谁启动了进程，进程就拥有谁的身份（以进程（process）发起者的身份运行）。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-用户"><span class="toc-text">1.4 用户</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-1-用户User："><span class="toc-text">1.4.1 用户User：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-2-passwd文件格式："><span class="toc-text">1.4.2 passwd文件格式：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-3-shadow文件格式："><span class="toc-text">1.4.3 shadow文件格式：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-4-用户创建"><span class="toc-text">1.4.4 用户创建</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-5-用户属性的修改："><span class="toc-text">1.4.5 用户属性的修改：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-6-删除用户："><span class="toc-text">1.4.6 删除用户：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-7-切换用户或以其他用户身份执行命令"><span class="toc-text">1.4.7 切换用户或以其他用户身份执行命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-8-修改密码"><span class="toc-text">1.4.8 修改密码</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-组"><span class="toc-text">1.5 组</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-5-1-Linux组的类别"><span class="toc-text">1.5.1 Linux组的类别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-5-2-组group："><span class="toc-text">1.5.2 组group：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-5-3-group文件格式"><span class="toc-text">1.5.3 group文件格式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-5-4-gshadow文件格式"><span class="toc-text">1.5.4 gshadow文件格式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-5-5-创建组："><span class="toc-text">1.5.5 创建组：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-5-6-修改和删除组："><span class="toc-text">1.5.6 修改和删除组：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-5-7-更改组密码"><span class="toc-text">1.5.7 更改组密码</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-文件权限："><span class="toc-text">2 文件权限：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-文件的权限主要针对三类对进行定义"><span class="toc-text">2.1 文件的权限主要针对三类对进行定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-文件和目录权限的区别："><span class="toc-text">2.2 文件和目录权限的区别：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-修改文件权限："><span class="toc-text">2.3 修改文件权限：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-4-修改文件的属组和属主："><span class="toc-text">2.4 修改文件的属组和属主：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-5-新建文件和目录的默认权限"><span class="toc-text">2.5 新建文件和目录的默认权限</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-6-访问控制列表"><span class="toc-text">2.6 访问控制列表</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/blog/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>
