@@ -1,0 +1,581 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="个人博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://luoqian67.github.io/blog">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>python-标准库 | 个人博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="img/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/blog/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/blog/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/blog/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Luo Qian'>
+            <img src="/blog/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/blog/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://luoqian67.github.io/blog">个人博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/blog/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/blog/categories/Linux/"><i class="fa "></i>Linux</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/blog/categories/python/"><i class="fa "></i>python</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/blog/categories/杂项教程/"><i class="fa "></i>杂项</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/blog/archives/2018/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="python-标准库">
+            
+	            python-标准库
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/python">
+            python
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/python" title='python'>
+                        python
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/08/24</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h4 id="标准库"><a href="#标准库" class="headerlink" title="标准库"></a>标准库</h4><h5 id="datetime模块"><a href="#datetime模块" class="headerlink" title="datetime模块"></a>datetime模块</h5><ul>
+<li><p>对日期、时间、时间戳的处理</p>
+</li>
+<li><p>datetime类</p>
+<ul>
+<li><p>类方法：</p>
+<ul>
+<li><p>today():返回本地时区当前时间的datetime对象</p>
+</li>
+<li><p>now(tz=None)：返回当前时间的datetime对象，时间到微秒，如果tz为None，返回和today()一样</p>
+</li>
+<li><p>utcnow()：没有时区的当前时间（国际化的时候建议用这个）</p>
+</li>
+<li><p>fromtimestamp(timestamp , tz = None) 从一个时间戳返回一个datetime对象</p>
+</li>
+</ul>
+</li>
+<li><p>datetime对象</p>
+<ul>
+<li>timestamp()：返回一个到微秒的时间戳<ul>
+<li>时间戳：格林威治时间1970年1月1日0点到现在的秒数。</li>
+</ul>
+</li>
+<li>构造方法 datetime.datetime(2016, 12, 6, 16, 29, 43, 79043)</li>
+<li>year、month、day、hour、minute、second、microsecond，取datetime对象的年月日时分秒及微秒</li>
+<li>weekday() 返回星期的天，周一0，周日6</li>
+<li>isoweekday() 返回星期的天，周一1，周日7</li>
+<li>date() 返回日期date对象</li>
+<li>time() 返回时间time对象</li>
+<li>replace() 修改并返回新的时间</li>
+<li>isocalendar() 返回一个三元组(年，周数，周的天)</li>
+</ul>
+</li>
+<li><p><strong>日期格式化</strong></p>
+<ul>
+<li><p>类方法 strptime(date_string, format) ，返回datetime对象</p>
+</li>
+<li><p>对象方法 strftime(format) ，返回字符串</p>
+</li>
+<li><p>字符串format函数格式化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">dt = datetime.datetime.strptime(<span class="string">"21/11/06 16:30"</span>, <span class="string">"%d/%m/%y %H:%M"</span>)</span><br><span class="line">print(dt.strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>))</span><br><span class="line">print(<span class="string">"&#123;0:%Y&#125;/&#123;0:%m&#125;/&#123;0:%d&#125; &#123;0:%H&#125;::&#123;0:%M&#125;::&#123;0:%S&#125;"</span>.format(dt))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>timedelta对象</p>
+<ul>
+<li><p>datetime2 = datetime1 + timedelta</p>
+<ul>
+<li><p>datetime2 = datetime1 - timedelta</p>
+</li>
+<li><p>timedelta = datetime1 - datetime2</p>
+</li>
+<li><p>构造方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- datetime.timedelta(days=<span class="number">0</span>, seconds=<span class="number">0</span>, microseconds=<span class="number">0</span>, milliseconds=<span class="number">0</span>, </span><br><span class="line">minutes=<span class="number">0</span>, hours=<span class="number">0</span>, weeks=<span class="number">0</span>) </span><br><span class="line">- year = datetime.timedelta(days=<span class="number">365</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>total_seconds() 返回时间差的总秒数</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="time模块"><a href="#time模块" class="headerlink" title="time模块"></a>time模块</h5><ul>
+<li>time.sleep(secs) 将调用线程挂起指定的秒数（发起一个系统调用，让程序暂停）</li>
+</ul>
+<h4 id="解析式"><a href="#解析式" class="headerlink" title="解析式"></a>解析式</h4><h5 id="列表解析式"><a href="#列表解析式" class="headerlink" title="列表解析式"></a>列表解析式</h5><ol>
+<li>语法:</li>
+</ol>
+<ul>
+<li><p>[返回值   for   元素   in   可迭代对象   if   条件]</p>
+</li>
+<li><p>使用中括号[]，内部是for循环，if条件语句可选</p>
+</li>
+<li><p>返回一个新的列表</p>
+</li>
+</ul>
+<ol start="2">
+<li>列表解析式是一种语法糖：</li>
+</ol>
+<ul>
+<li>编译器会优化，不会因为简写而影响效率，反而会因优化而提高了效率。</li>
+<li>减少了程序员工作量，减少出错。</li>
+<li>简化了代码，但可读性增强，不便于可读。</li>
+</ul>
+<ol start="3">
+<li>举例：</li>
+</ol>
+<ul>
+<li>获取10以内的偶数<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#普通</span></span><br><span class="line">even = []</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">  <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">    even.append(x)</span><br><span class="line"> </span><br><span class="line"><span class="comment">#解析式</span></span><br><span class="line">even = [x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>) <span class="keyword">if</span> x%<span class="number">2</span> == <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="4">
+<li>思考:</li>
+</ol>
+<ul>
+<li><p>有这样的赋值语句 <code>newlist = [print(i) for i in range(10)]</code>打印出来的是什么？<br>print()把所有的i全打印出来，newlist里面则是10个None</p>
+</li>
+<li><p>获取20以内的偶数，如果同时是3的倍数，把它打印出来</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">20</span>) <span class="keyword">if</span> <span class="keyword">not</span> i % <span class="number">2</span> <span class="keyword">and</span> i % <span class="number">3</span> == <span class="number">0</span>]</span><br><span class="line">[i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">20</span>) <span class="keyword">if</span> <span class="keyword">not</span> i % <span class="number">2</span> <span class="keyword">if</span> i % <span class="number">3</span> == <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取20以内2的倍数或者3的倍数，把它打印出来<br><code>[i for i in range(20) if not i % 2 or i % 3 == 0]</code></p>
+</li>
+<li><p>“0001.abadicddws” 是ID格式，要求ID格式是以点号分割，左边是4位从1开始的整数，右边是<br>10位随机小写英文字母。请依次生成前100个ID的列表</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line">x= string.ascii_lowercase</span><br><span class="line">[<span class="string">"&#123;:&gt;04&#125;.&#123;&#125;"</span>.format(i,<span class="string">""</span>.join(random.choices(x,k = <span class="number">10</span>))) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">8</span>)]</span><br><span class="line"></span><br><span class="line">[<span class="string">'0001.rvverptnre'</span>,</span><br><span class="line"> <span class="string">'0002.beqkpbxhfl'</span>,</span><br><span class="line"> <span class="string">'0003.woxvvayzjo'</span>,</span><br><span class="line"> <span class="string">'0004.wrbnnkelcc'</span>,</span><br><span class="line"> <span class="string">'0005.kpsjowcfvz'</span>,</span><br><span class="line"> <span class="string">'0006.pnqwqzlttc'</span>,</span><br><span class="line"> <span class="string">'0007.wehobydqnf'</span>]</span><br></pre></td></tr></table></figure>
+<h5 id="字典解析式"><a href="#字典解析式" class="headerlink" title="字典解析式"></a>字典解析式</h5><ol>
+<li>语法：</li>
+</ol>
+<ul>
+<li>{返回值 for 元素 in 可迭代对象 if 条件}</li>
+<li>列表解析式的中括号换成大括号{}就行了</li>
+<li>使用key:value形式</li>
+<li>立即返回一个字典<br>用法：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;x:(x,x+<span class="number">1</span>) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)&#125;</span><br><span class="line">&#123;x:[x,x+<span class="number">1</span>] <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)&#125;</span><br><span class="line">&#123;(x,):[x,x+<span class="number">1</span>] <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)&#125;</span><br><span class="line">&#123;[x]:[x,x+<span class="number">1</span>] <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)&#125; <span class="comment">#[x]不可哈希，字典的k要求可哈希</span></span><br><span class="line">&#123;chr(<span class="number">0x41</span>+x):x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)&#125;</span><br><span class="line">&#123;str(x):y <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">3</span>) <span class="keyword">for</span> y <span class="keyword">in</span> range(<span class="number">4</span>)&#125; <span class="comment"># 输出多少个元素？</span></span><br><span class="line"><span class="comment">#会覆盖，返回&#123;0：3，1：3，2：3&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="集合解析式"><a href="#集合解析式" class="headerlink" title="集合解析式"></a>集合解析式</h5><ol>
+<li>语法</li>
+</ol>
+<ul>
+<li>{返回值 for 元素 in 可迭代对象 if 条件}</li>
+<li>列表解析式的中括号换成大括号{}就行了</li>
+<li>立即返回一个集合<br>用法<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;(x,x+<span class="number">1</span>) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)&#125;</span><br><span class="line">&#123;[x] <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)&#125; <span class="comment">#[x]是个集合，不能哈希，所以放在集合解析式里面会报错</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h5><p>生成器表达式Generator expression</p>
+<ol>
+<li>语法</li>
+</ol>
+<ul>
+<li><p>(返回值 for 元素 in 可迭代对象 if 条件)</p>
+</li>
+<li><p>列表解析式的中括号换成小括号就行了</p>
+</li>
+<li><p>返回一个生成器</p>
+</li>
+</ul>
+<ol start="2">
+<li>和列表解析式的区别</li>
+</ol>
+<ul>
+<li><p>生成器表达式是按需计算（或称惰性求值、延迟计算），需要的时候才计算值，返回迭代器，可以迭代，从前到后走完一遍后，不能回头。</p>
+</li>
+<li><p>列表解析式是立即返回值，返回的不是迭代器，返回可迭代对象列表， 从前到后走完一遍后，可以重新回头迭代。</p>
+</li>
+</ul>
+<ol start="3">
+<li>和列表解析式的对比</li>
+</ol>
+<ul>
+<li>计算方式<ul>
+<li>生成器表达式延迟计算，列表解析式立即计算</li>
+</ul>
+</li>
+<li>内存占用<ul>
+<li>单从返回值本身来说，生成器表达式省内存，列表解析式返回新的列表</li>
+<li>生成器没有数据，内存占用极少，但是使用的时候，虽然一个个返回数据，但是合起来占用的内存也差不多</li>
+<li>列表解析式构造新的列表需要占用内存</li>
+</ul>
+</li>
+<li>计算速度<ul>
+<li>单看计算时间看，生成器表达式耗时非常短，列表解析式耗时长</li>
+<li>但是生成器本身并没有返回任何值，只返回了一个生成器对象</li>
+<li>列表解析式构造并返回了一个新的列表</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>生成器</li>
+</ol>
+<ul>
+<li>可迭代对象(able结尾)</li>
+<li>迭代器(or结尾)，是不是迭代器用next（）方法可以检测，iter（）方法可以把一个可迭代对象封装成迭代器。</li>
+<li>生成器和迭代器是不同的对象，但都是可迭代对象，生成器对象，就是迭代器对象，迭代器不一定是生成器。</li>
+</ul>
+<h4 id="内建函数"><a href="#内建函数" class="headerlink" title="内建函数"></a>内建函数</h4><ol>
+<li>标识 id </li>
+</ol>
+<ul>
+<li>返回对象的唯一标识，CPython返回内存地址</li>
+</ul>
+<ol start="2">
+<li>哈希 hash() </li>
+</ol>
+<ul>
+<li>返回一个对象的哈希值</li>
+</ul>
+<ol start="3">
+<li>类型 type() </li>
+</ol>
+<ul>
+<li>返回对象的类型</li>
+</ul>
+<ol start="4">
+<li>类型转换</li>
+</ol>
+<ul>
+<li>float() int() bin() hex() oct() bool() list() tuple() dict() set() complex() bytes() bytearray() </li>
+</ul>
+<ol start="5">
+<li>输入 input([prompt]) </li>
+</ol>
+<ul>
+<li>接收用户输入，返回一个字符串</li>
+</ul>
+<ol start="6">
+<li>打印 print(*objects, sep=’ ‘, end=’\n’, file=sys.stdout, flush=False)</li>
+</ol>
+<ul>
+<li>打印输出，默认使用空格分割、换行结尾，输出到控制台</li>
+</ul>
+<ol start="7">
+<li>对象长度 len(s)</li>
+</ol>
+<ul>
+<li>返回一个集合类型的元素个数</li>
+</ul>
+<ol start="8">
+<li>isinstance(obj, class_or_tuple) </li>
+</ol>
+<ul>
+<li>判断对象obj是否属于某种类型或者元组中列出的某个类型</li>
+<li>isinstance(True, int)</li>
+</ul>
+<ol start="9">
+<li>issubclass(cls, class_or_tuple)</li>
+</ol>
+<ul>
+<li>判断类型cls是否是某种类型的子类或元组中列出的某个类型的子类</li>
+<li>issubclass(bool, int)</li>
+</ul>
+<ol start="10">
+<li><p>绝对值abs(x)  x为数值</p>
+</li>
+<li><p>最大值max() 最小值min() </p>
+</li>
+</ol>
+<ul>
+<li>返回可迭代对象中最大或最小值</li>
+<li>返回多个参数中最大或最小值</li>
+</ul>
+<ol start="12">
+<li><p>round(x) 四舍六入五取偶，round(-0.5)</p>
+</li>
+<li><p>pow(x , y) 等价于 x**y</p>
+</li>
+<li><p>range(stop) 从0开始到stop-1的可迭代对象；range(start, stop[, step])从start开始到stop-1结束步长为step的可迭代对象</p>
+</li>
+<li><p>divmod(x, y) 等价于 tuple (x//y, x%y)</p>
+</li>
+<li><p>sum(iterable[, start]) 对可迭代对象的所有数值元素求和，start：初始值</p>
+</li>
+</ol>
+<ul>
+<li>sum(range(1,100,2))</li>
+</ul>
+<ol start="17">
+<li>chr(i) 给一个一定范围的整数返回对应的字符</li>
+</ol>
+<ul>
+<li>chr(97)    chr(20013)</li>
+</ul>
+<ol start="18">
+<li>ord(c) 返回字符对应的整数</li>
+</ol>
+<ul>
+<li>ord(‘a’)    ord(‘中’)</li>
+</ul>
+<ol start="19">
+<li>sorted<br>sorted(iterable[, key][, reverse] )排序</li>
+</ol>
+<ul>
+<li>返回一个新的列表，默认升序</li>
+<li>reverse是反转<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sorted([<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>])</span><br><span class="line">sorted([<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>], reverse=<span class="keyword">True</span>)</span><br><span class="line">sorted(&#123;<span class="string">'c'</span>:<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>, <span class="string">'a'</span>:<span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="20">
+<li><p>翻转 reversed(seq)<br>返回一个翻转元素的迭代器(惰性求值)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list(reversed(<span class="string">"13579"</span>))</span><br><span class="line">&#123; reversed((<span class="number">2</span>, <span class="number">4</span>)) &#125; <span class="comment"># 有几个元素？</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> reversed([<span class="string">'c'</span>,<span class="string">'b'</span>,<span class="string">'a'</span>]):</span><br><span class="line">	print(x)</span><br><span class="line">reversed(sorted(&#123;<span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>&#125;))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>枚举 enumerate(seq, start=0)</p>
+</li>
+</ol>
+<p>迭代一个序列，返回索引数字和元素构成的二元组<br>start表示索引开始的数字，默认是0<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> enumerate([<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>]):</span><br><span class="line">	print(x)</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> enumerate(<span class="string">"abcde"</span>):</span><br><span class="line">	print(x,end=<span class="string">" "</span>)</span><br></pre></td></tr></table></figure></p>
+<ol start="22">
+<li>迭代器和取元素 iter(iterable)、next(iterator[, default])</li>
+</ol>
+<p>iter将一个可迭代对象封装成一个迭代器<br>next对一个迭代器取下一个元素。如果全部元素都取过了，再次next会抛StopIteration异常<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">it = iter(range(<span class="number">5</span>))</span><br><span class="line">next(it)</span><br><span class="line"></span><br><span class="line">it = reversed([<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>])</span><br><span class="line">next(it)</span><br></pre></td></tr></table></figure></p>
+<ol start="23">
+<li>拉链函数zip(*iterables)<br>像拉链一样，把多个可迭代对象合并在一起，返回一个迭代器<br>将每次从不同对象中取到的元素合并成一个元组<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list(zip(range(<span class="number">10</span>),range(<span class="number">10</span>)))</span><br><span class="line">list(zip(range(<span class="number">10</span>),range(<span class="number">10</span>),range(<span class="number">5</span>),range(<span class="number">10</span>)))</span><br><span class="line"></span><br><span class="line">dict(zip(range(<span class="number">10</span>),range(<span class="number">10</span>)))</span><br><span class="line">&#123;str(x):y <span class="keyword">for</span> x,y <span class="keyword">in</span> zip(range(<span class="number">10</span>),range(<span class="number">10</span>))&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">https://luoqian67.github.io/blog/</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/blog/2018/08/19/python（一）/" class="next-post btn btn-default" title='python-内置数据结构'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">python-内置数据结构</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/blog/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xme1rFxnnyLwK8UFBgckpusw-gzGzoHsz',
+            appKey: 'u9MbOVN8LcSmPkewWeQKtEnJ',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#标准库"><span class="toc-text">标准库</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#datetime模块"><span class="toc-text">datetime模块</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#time模块"><span class="toc-text">time模块</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解析式"><span class="toc-text">解析式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#列表解析式"><span class="toc-text">列表解析式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#字典解析式"><span class="toc-text">字典解析式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#集合解析式"><span class="toc-text">集合解析式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#生成器"><span class="toc-text">生成器</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#内建函数"><span class="toc-text">内建函数</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/blog/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>
